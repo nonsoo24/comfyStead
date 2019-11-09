@@ -18,7 +18,7 @@
 
                         <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
                             <h5 class="mb-4 font-weight-bold">Popular Services</h5>
-                            <ul class="list-group">
+                            <ul class="list-group services">
                                 <li class="list-group-item  border-0 p-0 mb-2"><a href="#"> Carpentry</a></li>
                                 <li class="list-group-item  border-0 p-0 mb-2"><a href="#"> Cleaning</a></li>
                                 <li class="list-group-item  border-0 p-0 mb-2"><a href="#"> Fumigation</a></li>
@@ -52,9 +52,9 @@
                         </div>
 
                         <div class="col-md-3 col-sm-6 col-6 p-0 mb-3 float-left">
-                            <h5 class="mb-4 font-weight-bold">Download the app</h5>
+                            <h5 class="mb-4 m font-weight-bold">Download the app</h5>
                             <div class="d-flex flex-row">
-                                <img src="assets/img/playstore.svg" alt="playstore" style="width: 100px; height: 100px">
+                                <img src="assets/img/playstore.svg" alt="playstore" style="width: 100px">
                                 <svg width="166" height="48" viewBox="0 0 166 48" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -103,6 +103,7 @@
         font-family: "Rubik", "Arial", "sans-serif";
         font-weight: 500;
         color: #333456 !important;
+        margin-top: 58px;
     }
 
     a {
@@ -114,6 +115,9 @@
     a:hover {
         color: #007bff;
         text-decoration: none;
+    }
+    .services li{
+        margin-left: 40px;
     }
 
     ul li {
@@ -128,9 +132,8 @@
         left: 30px;
     }
 
+    img:hover, svg:hover{
+        cursor: pointer;
 
-    /* li span {
-  position: relative;
-  left: 7px;
-} */
+    }
 </style>
