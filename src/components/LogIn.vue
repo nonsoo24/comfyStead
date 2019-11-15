@@ -7,27 +7,50 @@
         <section login-form>
             <div class="m-auto login-credential">
                 <h4 class="pb-3 font-weight-bolder">Welcome back</h4>
-                <div class="credential-item m-auto">
-                    <div class="form-group">
-                        <input type="text" id="email" class="form-control p-4 m-auto" placeholder="Email address">
-                    </div>
 
-                    <div class="form-group">
-                        <input type="password" id="password" class="form-control p-4 m-auto" placeholder="Password">
-                    </div>
+                <form @submit.prevent="login">
+                    <div v-if="!msg">{{msg}}</div>
+                    <div class="credential-item m-auto">
 
-                    <p class="text-right">Forgot password?</p>
-                    <button class="login-button">Login</button>
-                    <p class="option">OR</p>
+                        <!-- email address -->
+                        <div class="form-group" :class="{'invalid': $v.loginDetails.email.$error}">
+                            <input type="text" id="email" class="form-control p-4 m-auto" placeholder="Email address"
+                                autofocus v-model="loginDetails.email">
 
-                    <div class="m-auto">
-                        <button class="facebook">Log in with facebook</button>
-                    </div>
+                                <!-- email address error message -->
+                            <div v-if="$v.loginDetails.email.$error">
+                                <p class="error" v-if="!$v.loginDetails.email.required">E-mail is required</p>
+                            </div>
+                            <p class="error" v-if="!$v.loginDetails.email.email">Invalid Email Address</p>
+                        </div>
 
-                    <div class="m-auto">
-                        <button class="google">Log in with google</button>
+                        <!-- password -->
+                        <div class="form-group" :class="{'invalid': $v.loginDetails.password.$error}">
+                            <input type="password" id="password" class="form-control p-4 m-auto" placeholder="Password"
+                                v-model="loginDetails.password">
+
+                                 <!-- password error message -->
+                            <div v-if="$v.loginDetails.password.$error">
+                                <p class="error" v-if="!$v.loginDetails.password.required">
+                                    Password is required
+                                </p>
+                            </div>
+                        </div>
+
+                        <a href="#" class="text-right">Forgot password?</a>
+                        <!-- <router-link  >Forgot password?</router-link> -->
+                        <button class="login-button" :disabled="$v.loginDetails.$invalid" @click.prevent="login">Login</button>
+                        <p class="option">OR</p>
+
+                        <div class="m-auto">
+                            <button class="facebook">Log in with facebook</button>
+                        </div>
+
+                        <div class="m-auto">
+                            <button class="google">Log in with google</button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </section>
 
@@ -39,14 +62,87 @@
 </template>
 
 <script>
+    import axios from 'axios'
     import NavBar from '../components/HomePage/NavBar.vue'
     import TheFooter from '../components/HomePage/TheFooter.vue';
+    import {required, email} from 'vuelidate/lib/validators'
     export default {
+        data() {
+            return {
+
+                submitStatus: null,
+                // disablebutton: false,
+                // disabled: false,
+                // loader: false,
+                msg: "",
+                errors: {},
+                loginDetails: {
+                    email: '',
+                    password: ''
+
+                }
+            }
+
+        },
+
         components: {
             'nav-bar': NavBar,
             'the-footer': TheFooter
+        },
+
+
+        validations: {
+            loginDetails: {
+                email: {
+                    required,
+                    email
+                    // validEmail(email){
+                    //      return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+                    // }
+                },
+
+                password: {
+                    required,
+                }
+            }
+        },
+
+
+            methods: {
+
+                dashboard() {
+                    this.$router.push({
+                        path: 'customer'
+                    })
+
+                },
+                login() {
+
+                    this.$v.$touch()
+                    if (this.$v.$invalid) {
+                        this.submitStatus = 'ERROR'
+                    } else {
+                        // this.disablebutton = true;
+                        this.loader = true;
+
+                        axios.post("/users/login", this.loginDetails)
+                            .then(response => {
+                                //debugger
+                                this.dashboard();
+                            })
+                            .catch(function (error) {
+                                console.log(error.response)
+                                this.msg = error.response.data.msg
+                                // handle error
+                                console.log(error.response.data.errors || error.response.data.msg);
+                            })
+                    }
+                }
+            }
+
         }
-    }
+
 </script>
 
 

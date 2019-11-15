@@ -119,7 +119,7 @@
         <!-- services -->
         <section>
             <div id="exTab1" class="container">
-                <ul class="nav nav-pills mb-4">
+                <!-- <ul class="nav nav-pills mb-4">
                     <li class="active">
                         <a href="#1a" data-toggle="tab">Cleaning</a>
                     </li>
@@ -139,63 +139,88 @@
                         <a href="#6a" data-toggle="tab">more <span><img src="assets/img/icons/arrow.png"
                                     alt="arrow"></span></a>
                     </li>
+                </ul> -->
+
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="nav-item">
+                        <a class="nav-link" @click.prevent="setActive('cleaning')"
+                            :class="{ active: isActive('cleaning') }" href="#cleaning">Cleaning</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" @click.prevent="setActive('carpentry')"
+                            :class="{ active: isActive('carpentry') }" href="#carpentry">Carpentry</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" @click.prevent="setActive('plumbering')"
+                            :class="{ active: isActive('plumbering') }" href="#plumbering">Plumbering</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" @click.prevent="setActive('painting')"
+                            :class="{ active: isActive('painting') }" href="#painting">Painting</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" @click.prevent="setActive('fumigation')"
+                            :class="{ active: isActive('fumigation') }" href="#fumigation">Fumigation</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" @click.prevent="setActive('more')" :class="{ active: isActive('more') }"
+                            href="#more">more
+                            <span><img src="assets/img/icons/arrow.png" alt="arrow"></span>
+                        </a>
+                    </li>
                 </ul>
 
-                <div class="cleaning">
-                    <div class="text-left pt-4 pl-5 container">
-                        <img class="pb-2" src="assets/img/icons/cleaning.png" alt="cleaning-image">
-                        <p class="text-left text-light">
-                            For all your cleaning services you in mind <br> and some you haven't thought of yet.
-                        </p>
+
+
+                <div class="tab-content py-3" id="myTabContent">
+                    <div class="tab-pane fade" :class="{ 'active show': isActive('cleaning') }" id="cleaning">
+
+
+                        <div class="cleaning">
+                            <div class="text-left pt-4 pl-5 container">
+                                <img class="pb-2" src="assets/img/icons/cleaning.png" alt="cleaning-image">
+                                <p class="text-left text-light">
+                                    For all your cleaning services you have in mind <br> and some you haven't thought of yet.
+                                </p>
+                            </div>
+
+                            <p class="text-left text-light container pt-5 pl-5">view all cleaning services <a href="#">
+                                    <span>
+                                        <img src="assets/img/icons/arrow.png" alt="arrow"> </span> </a> </p>
+                        </div>
+
+                        <div class="row mt-3 services-types">
+
+                             <div v-for="(service, i) in services" :key="i" class="col-md-3">
+                                <img :src="service.image" :alt="service.alt" @click="requestServices">
+                                <h5 class="text-left mb-0 mt-1">{{service.name}}</h5>
+                                <p class="text-left font-weight-bolder">{{service.total}}     professionals</p>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <p class="text-left text-light container pt-5 pl-5">view all cleaning services <a href="#"> <span>
-                                <img src="assets/img/icons/arrow.png" alt="arrow"> </span> </a> </p>
+
+                    <div class="tab-pane fade" :class="{ 'active show': isActive('carpentry') }" id="carpentry">Carpentry
+                        content</div>
+
+                    <div class="tab-pane fade" :class="{ 'active show': isActive('plumbering') }" id="plumbering">Plumbering
+                        content</div>
+
+                    <div class="tab-pane fade" :class="{ 'active show': isActive('painting') }" id="painting">Painting
+                        content</div>
+
+                    <div class="tab-pane fade" :class="{ 'active show': isActive('fumigation') }" id="fumigation">Fumigation
+                        content</div>
+
+                    <div class="tab-pane fade" :class="{ 'active show': isActive('more') }" id="more">More
+                        content</div>
+
                 </div>
 
-                <div class="row mt-3 services-types">
-                    <div class="col-md-3">
-                        <img src="assets/img/services/housecleaning.svg" alt="house-cleaning">
-                        <h5 class="text-left mb-0 mt-1">House cleaning</h5>
-                        <p class="text-left">20 professionals</p>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/services/laundry.svg" alt="laundry">
-                        <h5 class="text-left mb-0 mt-1">Laundry</h5>
-                        <p class="text-left">20 professionals</p>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/services/waste.svg" alt="waste">
-                        <h5 class="text-left mb-0 mt-1">Waste Disposal</h5>
-                        <p class="text-left">20 professionals</p>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="assets/img/services/officecleaning.svg" alt="cleaning">
-                        <h5 class="text-left mb-0 mt-1">Office cleaning</h5>
-                        <p class="text-left">20 professionals</p>
-                    </div>
-                </div>
-
-                <!-- <div class="tab-content clearfix">
-                <div class="tab-pane active" id="1a">
-                    <h3>Content's background color is the same for the tab</h3>
-                </div>
-                <div class="tab-pane" id="2a">
-                    <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color
-                        for the tab</h3>
-                </div>
-                <div class="tab-pane" id="3a">
-                    <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
-                </div>
-                <div class="tab-pane" id="4a">
-                    <h3>We use css to change the background color of the content to be equal to the tab</h3>
-                </div>
-                 <div class="tab-pane" id="5a">
-                    <h3>We use css to change the background color of the content to be equal to the tab</h3>
-                </div>
-                 <div class="tab-pane" id="6a">
-                    <h3>We use css to change the background color of the content to be equal to the tab</h3>
-                </div> -->
             </div>
         </section>
 
@@ -207,8 +232,8 @@
                     <p class="text-left customer-word">Over 200 people use iGofer for their handyman services <br> and
                         make their lives easier and better </p>
                 </div>
-                <div class="col-md-6">
-                    <div class="testimonal p-3">
+                <div class="col-md-6 owl-carousel owl-theme">
+                    <div class="testimonal p-3 item">
                         <p class="text-left ">I was interested. So I asked for someone to clean my house. They jumped at
                             it. 10 minutes later a certain Godwin called me. Godwin showed up, dressed and well
                             mannered. 3 hours later he had done a great job!</p>
@@ -221,7 +246,28 @@
                         </div>
 
                     </div>
-                    <div class="testimonal p-3 mt-3 mb-5">
+
+                    <div class="testimonal p-3 mt-3 mb-5 item">
+                        <p class="text-left">I was interested. So I asked for someone to clean my house. They jumped at
+                            it. 10 minutes later a certain Godwin called me. Godwin showed up, dressed and well
+                            mannered. 3 hours later he had done a great job!</p>
+                        <div class="d-flex">
+                            <img src="/assets/img/testimonial/picture2.svg" alt="testimonial">
+                            <p class="text-left pt-3 pl-2 font-weight-bolder">Folajimi Aroloye</p>
+                        </div>
+                    </div>
+
+                    <div class="testimonal p-3 mt-3 mb-5  item">
+                        <p class="text-left">I was interested. So I asked for someone to clean my house. They jumped at
+                            it. 10 minutes later a certain Godwin called me. Godwin showed up, dressed and well
+                            mannered. 3 hours later he had done a great job!</p>
+                        <div class="d-flex">
+                            <img src="/assets/img/testimonial/picture2.svg" alt="testimonial">
+                            <p class="text-left pt-3 pl-2 font-weight-bolder">Folajimi Aroloye</p>
+                        </div>
+                    </div>
+
+                    <div class="testimonal p-3 mt-3 mb-5 item">
                         <p class="text-left">I was interested. So I asked for someone to clean my house. They jumped at
                             it. 10 minutes later a certain Godwin called me. Godwin showed up, dressed and well
                             mannered. 3 hours later he had done a great job!</p>
@@ -303,11 +349,61 @@
 <script>
     import NavBar from '../components/HomePage/NavBar.vue';
     import TheFooter from '../components/HomePage/TheFooter.vue';
+    import {cleaningSubServices} from '../components/Api/Service.js'
     export default {
-        components: {
-            'nav-bar': NavBar,
-            'the-footer': TheFooter
-        }
+        data() {
+                return {
+                    activeItem: 'cleaning',
+                    services: [],
+                    subService: []
+                }
+            },
+            components: {
+                'nav-bar': NavBar,
+                'the-footer': TheFooter
+            },
+
+            methods: {
+                isActive(menuItem) {
+                    return this.activeItem === menuItem
+                },
+                setActive(menuItem) {
+                    this.activeItem = menuItem
+                },
+                requestServices() {
+                    this.$router.push({
+                        path: 'request'
+                    })
+                }
+
+            },
+
+            created() {
+                cleaningSubServices.forEach(service => {
+                    this.services.push(service);
+                })
+            },
+
+            mounted() {
+                $(document).ready(function () {
+
+                    $(".owl-carousel").owlCarousel({
+                        items: 2,
+                        loop: false,
+                        mouseDrag: false,
+                        touchDrag: false,
+                        pullDrag: false,
+                        rewind: true,
+                        autoplay: true,
+                        margin: 0,
+                        nav: true
+                    });
+
+                    let newBackground = document.getElementByTagName('SPAN')
+                    newBackground.style.background = '#FF6600;'
+                });
+            }
+
     }
 </script>
 

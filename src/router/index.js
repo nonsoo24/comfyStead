@@ -6,6 +6,8 @@ import LogIn from '../components/LogIn.vue'
 import SignUp from '../components/SignUp.vue'
 import JoinAsPro from '../components/JoinAsPro.vue'
 import Store from '../views/Store.vue'
+import  Request from '../components/Request.vue'
+import Customer from '../components/IgoferAccount/CustomerAccount/Customer.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +41,19 @@ const routes = [
     path: '/join',
     name: 'join',
     component: JoinAsPro
+  },
+
+  {
+    path: '/request',
+    name: 'request',
+    component: Request
+  },
+
+  // User Account
+  {
+    path: '/customer',
+    name: 'customer',
+    component: Customer
   }
 ]
 
