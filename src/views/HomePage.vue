@@ -195,7 +195,7 @@
                         <div class="row mt-3 services-types">
 
                              <div v-for="(service, i) in services" :key="i" class="col-md-3">
-                                <img :src="service.image" :alt="service.alt" @click="requestServices">
+                                <img :src="service.image" :alt="service.alt" @click="TaskDescription">
                                 <h5 class="text-left mb-0 mt-1">{{service.name}}</h5>
                                 <p class="text-left font-weight-bolder">{{service.total}}     professionals</p>
                             </div>
@@ -232,6 +232,8 @@
                     <p class="text-left customer-word">Over 200 people use iGofer for their handyman services <br> and
                         make their lives easier and better </p>
                 </div>
+
+
                 <div class="col-md-6 owl-carousel owl-theme">
                     <div class="testimonal p-3 item">
                         <p class="text-left ">I was interested. So I asked for someone to clean my house. They jumped at
@@ -247,7 +249,7 @@
 
                     </div>
 
-                    <div class="testimonal p-3 mt-3 mb-5 item">
+                    <div class="testimonal p-3 mb-5 item">
                         <p class="text-left">I was interested. So I asked for someone to clean my house. They jumped at
                             it. 10 minutes later a certain Godwin called me. Godwin showed up, dressed and well
                             mannered. 3 hours later he had done a great job!</p>
@@ -257,7 +259,7 @@
                         </div>
                     </div>
 
-                    <div class="testimonal p-3 mt-3 mb-5  item">
+                    <div class="testimonal p-3 mb-5  item">
                         <p class="text-left">I was interested. So I asked for someone to clean my house. They jumped at
                             it. 10 minutes later a certain Godwin called me. Godwin showed up, dressed and well
                             mannered. 3 hours later he had done a great job!</p>
@@ -267,7 +269,7 @@
                         </div>
                     </div>
 
-                    <div class="testimonal p-3 mt-3 mb-5 item">
+                    <div class="testimonal p-3 mb-5 item">
                         <p class="text-left">I was interested. So I asked for someone to clean my house. They jumped at
                             it. 10 minutes later a certain Godwin called me. Godwin showed up, dressed and well
                             mannered. 3 hours later he had done a great job!</p>
@@ -370,9 +372,9 @@
                 setActive(menuItem) {
                     this.activeItem = menuItem
                 },
-                requestServices() {
+                TaskDescription() {
                     this.$router.push({
-                        path: 'request'
+                        path: 'task-description'
                     })
                 }
 
@@ -388,7 +390,7 @@
                 $(document).ready(function () {
 
                     $(".owl-carousel").owlCarousel({
-                        items: 2,
+                        items: 1,
                         loop: false,
                         mouseDrag: false,
                         touchDrag: false,
@@ -396,11 +398,16 @@
                         rewind: true,
                         autoplay: true,
                         margin: 0,
-                        nav: true
+                        nav: false,
+                        // itemsDesktop : [1199,10],
+                        // itemsDesktopSmall : [980,9],
+                        // itemsTablet: [768,5],
+                        // itemsTabletSmall: false,
+                        // itemsMobile : [479,4]
                     });
 
-                    let newBackground = document.getElementByTagName('SPAN')
-                    newBackground.style.background = '#FF6600;'
+                    // let newBackground = document.getElementByTagName('SPAN')
+                    // newBackground.style.background = '#FF6600;'
                 });
             }
 

@@ -50,7 +50,7 @@
 
                         <!-- email address -->
 
-                        <div class="form-group" v-if="!$v.userData.email.$error">
+                        <div class="form-group" :class="{'invalid': $v.userData.email.$error}">
                             <input type="text" id="email" class="form-control
                             p-4 m-auto" placeholder="Email address" v-model.trim="$v.userData.email.$model">
 
@@ -64,7 +64,7 @@
                         <!-- phone number -->
 
                         <div class="form-group" :class="{'invalid': $v.userData.phone_number.$error}">
-                            <input type="number" id="number" class="form-control p-4 m-auto" placeholder="phone number"
+                            <input type="tel" id="number" class="form-control p-4 m-auto" placeholder="phone number"
                                 v-model.trim="$v.userData.phone_number.$model">
 
                             <p class="error" v-if="!$v.userData.phone_number.minLength">Phone number cannot not be more
@@ -72,8 +72,7 @@
                                 {{$v.userData.phone_number.params.minLength.min}} digits
                             </p>
 
-                             <p class="error" v-if="!$v.userData.phone_number.integer">Phone number must be a number
-                            </p>
+                             <p class="error" v-if="!$v.userData.phone_number.integer">Phone number must be a number/p>
 
 
                             <div v-if="$v.userData.phone_number.$error">
@@ -93,6 +92,7 @@
                                 </p>
                             </div>
 
+
                             <div v-if="$v.userData.password.$error">
                                 <p class="error" v-if="!$v.userData.password.required">Password is required</p>
                             </div>
@@ -101,7 +101,7 @@
                         <!-- confirm password -->
 
                         <div class="form-group" :class="{'invalid': $v.userData.confirm_password.$error}">
-                            <input type="password" id="password" class="form-control p-4 m-auto"
+                            <input type="password" id="confirm-password" class="form-control p-4 m-auto"
                                 placeholder="Confirm password">
 
                             <p class="error" v-if="!$v.userData.confirm_password.sameAsPassword">
@@ -222,45 +222,47 @@
             'the-footer': TheFooter
         },
 
-         methods: {
-        // signIn() {
-        //     this.$router.push({
-        //         path: 'SignIn'
-        //     })
-        // },
+        methods: {
+
+            verifyEmail() {
+                this.$router.push({
+                    path: 'verifyEmail'
+                })
+            },
 
 
-        createUser() {
-            this.$v.$touch()
-            if (this.$v.$invalid) {
-                this.submitStatus = 'ERROR'
-            } else {
-                this.disabled = true;
-                this.loader = true;
-                // alert("hello world")
-                axios.post("/users/register", this.userData, {
-                        headers: {
-                            'content-type': 'application/json',
-                            'Accept': 'application/json'
-                        }
-                    })
-                    .then(response => {
-                        this.loader = false;
-                        //console.log(this.userData)
-                        console.log("response", response.data.msg)
-                        //console.log(this.userData)
-                    })
-                    .catch(error => {
-                        this.loader = false;
-                        this.disabled = false;
-                        console.log(error.response.data.errors || error.response.data.msg)
-                        // this.errors = error.response.data.errors;
-                        // alert(this.errors)
-                        // console.log(error)
-                    })
+            createUser() {
+                this.$v.$touch()
+                if (this.$v.$invalid) {
+                    this.submitStatus = 'ERROR'
+                } else {
+                    this.disabled = true;
+                    this.loader = true;
+                    // alert("hello world")
+                    axios.post("/users/register", this.userData, {
+                            headers: {
+                                'content-type': 'application/json',
+                                'Accept': 'application/json'
+                            }
+                        })
+                        .then(response => {
+                            this.loader = false;
+                            this.verifyEmail();
+                            //console.log(this.userData)
+                            console.log("response", response.data.msg)
+                            //console.log(this.userData)
+                        })
+                        .catch(error => {
+                            this.loader = false;
+                            this.disabled = false;
+                            console.log(error.response.data.errors || error.response.data.msg)
+                            // this.errors = error.response.data.errors;
+                            // alert(this.errors)
+                            // console.log(error)
+                        })
+                }
             }
         }
-    }
     }
 </script>
 

@@ -6,8 +6,10 @@ import LogIn from '../components/LogIn.vue'
 import SignUp from '../components/SignUp.vue'
 import JoinAsPro from '../components/JoinAsPro.vue'
 import Store from '../views/Store.vue'
-import  Request from '../components/Request.vue'
+import  TaskDescription from '../components/TaskDescription.vue'
+import  RequestQuote from '../components/RequestQuote.vue'
 import Customer from '../components/IgoferAccount/CustomerAccount/Customer.vue'
+import VerifyEmail from '../components/VerifyEmail.vue'
 
 Vue.use(VueRouter)
 
@@ -44,9 +46,15 @@ const routes = [
   },
 
   {
-    path: '/request',
-    name: 'request',
-    component: Request
+    path: '/task-description',
+    name: 'task-description',
+    component: TaskDescription
+  },
+
+  {
+    path: '/request-a-quote',
+    name: 'request-a-quote',
+    component: RequestQuote
   },
 
   // User Account
@@ -54,6 +62,12 @@ const routes = [
     path: '/customer',
     name: 'customer',
     component: Customer
+  },
+
+  {
+    path: '/verify-email',
+    name: 'verify-email',
+    component: VerifyEmail
   }
 ]
 
