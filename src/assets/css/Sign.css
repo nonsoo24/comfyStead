@@ -95,12 +95,14 @@ input {
 a {
     font-size: 12px;
     color: rgba(51, 52, 86, 0.6);
-    margin-right: 23px;
+    margin: 16px;
     text-align: right !important;
+    float: right;
 }
 
 a:hover{
     text-decoration: none;
+    color: rgba(51, 52, 86, 0.6);
 }
 
 

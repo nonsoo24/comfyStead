@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-             <button class=" d-block text-left btn finish-button"> Finish </button>
+             <button class=" d-block text-left btn finish-button" @click="completeBooking()"> Finish </button>
 
 
             <!-- <div class="card m-auto">
@@ -156,6 +156,16 @@ export default {
         'the-footer': TheFooter
     },
 
+    methods: {
+         completeBooking(){
+            this.$router.push({
+                    path: 'complete-booking'
+                })
+        }
+    },
+
+   
+
     created(){
         testimonials.forEach(review => {
                 this.reviews.push(review);
@@ -228,6 +238,11 @@ export default {
 
     .title p{
         padding-bottom: 82px;
+    }
+
+    .title h3{
+        padding-top: 25px;
+
     }
 
 

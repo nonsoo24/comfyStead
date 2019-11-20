@@ -68,13 +68,13 @@
                         <p class="text-left font-weight-bolder">When would you like us to come? </p>
                         <div class="row">
                             <div class="col-md-6">
-                                <label class="appointment" for="time">Date</label>
-                                <input type="date" class="form-control">
+                                <label class="appointment" for="date">Date</label>
+                                <input type="date" class="form-control" id="date">
                             </div>
 
                             <div class="col-md-6">
                                 <label class="appointment" for="time">Time</label>
-                                <input type="time" class="form-control">
+                                <input type="time" id="time" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -101,6 +101,19 @@
 import NavBar from '../components/HomePage/NavBar.vue';
 import TheFooter from '../components/HomePage/TheFooter.vue';
 export default {
+    data() {
+        return {
+            bookingSummary: {
+                task:{},
+                taskDescription: {},
+                date: {},
+                time: {},
+                location: {},
+                estimatedBudget: {}
+
+            }
+        }
+    },
     components: {
         'nav-bar': NavBar,
         'the-footer': TheFooter
@@ -192,6 +205,11 @@ body {
 
     .title p{
         padding-bottom: 125px !important;
+    }
+
+    .title h3{
+        padding-top: 25px;
+
     }
 
       .request-form{

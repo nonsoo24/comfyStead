@@ -37,13 +37,13 @@
                             </div>
                         </div>
 
-                        <a href="#" class="text-right">Forgot password?</a>
+                        <a href="#">Forgot password?</a>
                         <!-- <router-link  >Forgot password?</router-link> -->
                         <button class="login-button" :disabled="$v.loginDetails.$invalid" @click.prevent="login">Login</button>
                         <p class="option">OR</p>
 
                         <div class="m-auto">
-                            <button class="facebook">Log in with facebook</button>
+                            <button class="facebook"><span><img src="/assets/img/facebook.png" alt="facebook" class="mt-0"></span> Log in with facebook</button>
                         </div>
 
                         <div class="m-auto">

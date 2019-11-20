@@ -168,7 +168,7 @@
                     <li class="nav-item">
                         <a class="nav-link" @click.prevent="setActive('more')" :class="{ active: isActive('more') }"
                             href="#more">more
-                            <span><img src="assets/img/icons/arrow.png" alt="arrow"></span>
+                            <span><img src="../assets/img/icons/arrow2.png" alt="arrow"></span>
                         </a>
                     </li>
                 </ul>
@@ -187,17 +187,21 @@
                                 </p>
                             </div>
 
-                            <p class="text-left text-light container pt-5 pl-5">view all cleaning services <a href="#">
+                            <a href="#">
+                                <p class="text-left text-light container pt-5 pl-5">
+                                    view all cleaning services
                                     <span>
-                                        <img src="assets/img/icons/arrow.png" alt="arrow"> </span> </a> </p>
+                                        <img src="assets/img/icons/arrow.png" alt="arrow"> </span>
+                                </p>
+                            </a>
                         </div>
 
                         <div class="row mt-3 services-types">
 
                              <div v-for="(service, i) in services" :key="i" class="col-md-3">
                                 <img :src="service.image" :alt="service.alt" @click="TaskDescription">
-                                <h5 class="text-left mb-0 mt-1">{{service.name}}</h5>
-                                <p class="text-left font-weight-bolder">{{service.total}}     professionals</p>
+                                <h5 class="text-left mb-0 mt-1">{{service.title}}</h5>
+                                <p class="text-left font-weight-bolder">{{service.total}} professionals</p>
                             </div>
                         </div>
 

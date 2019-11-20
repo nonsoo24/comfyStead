@@ -10,6 +10,7 @@ import  TaskDescription from '../components/TaskDescription.vue'
 import  RequestQuote from '../components/RequestQuote.vue'
 import Customer from '../components/IgoferAccount/CustomerAccount/Customer.vue'
 import VerifyEmail from '../components/VerifyEmail.vue'
+import CompleteBooking from '../components/CompleteBooking.vue'
 
 Vue.use(VueRouter)
 
@@ -55,6 +56,12 @@ const routes = [
     path: '/request-a-quote',
     name: 'request-a-quote',
     component: RequestQuote
+  },
+
+  {
+    path: '/complete-booking',
+    name: 'complete-booking',
+    component: CompleteBooking
   },
 
   // User Account

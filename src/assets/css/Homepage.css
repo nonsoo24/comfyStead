@@ -107,6 +107,8 @@ h6+p {
 
 .nav-tabs {
     border: none;
+    width: 61%;
+    margin-left: -15px;
 }
 
 .nav-tabs .nav-link {
@@ -158,6 +160,10 @@ img {
     cursor: pointer;
 }
 
+a:hover{
+    text-decoration: none;
+}
+
 
 /* become a worker */
 
@@ -190,6 +196,7 @@ button {
     padding: 15px !important;
     line-height: 25px !important;
     margin: 0px 123px 0px 0px !important;
+    border: none !important;
 }
 
 button:hover {
@@ -305,4 +312,9 @@ div.owl-carousel .owl-nav .owl-next {
 .owl-theme .owl-nav {
     margin-top: 10px;
     display: none !important;
+}
+
+.owl-stage .owl-item{
+    width: 217px!important;
+
 }
