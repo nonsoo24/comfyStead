@@ -15,8 +15,7 @@
 
                         <div class="form-group" :class="{'invalid': $v.userData.first_name.$error}">
                             <input type="text" id="first-name" class="form-control
-                                p-4 m-auto" placeholder="First name" aria-describedby="error-first-name" v-model.lazy="$v.userData.first_name.$model"
-                                autofocus>
+                                p-4 m-auto" placeholder="First name" aria-describedby="error-first-name" v-model.lazy="$v.userData.first_name.$model">
 
                             <p id="error-first-name" class="error" v-if="!$v.userData.first_name.minLength">
                                 Name must have at least
@@ -57,10 +56,9 @@
                             <input type="text" id="email" class="form-control
                             p-4 m-auto" aria-describedby="error-email" placeholder="Email address" v-model.lazy="$v.userData.email.$model">
 
-
+                            <p id="error-email" v-if="!$v.userData.email.email">Please enter a valid E-mail address</p>
                             <div class="error" v-if="$v.userData.email.$error">
                                 <p id="error-email" v-if="!$v.userData.email.required">E-mail is required</p>
-                                <p id="error-email" v-if="!$v.userData.email.email">Please enter a valid E-mail address</p>
                             </div>
                         </div>
 
@@ -68,14 +66,15 @@
 
                         <div class="form-group" :class="{'invalid': $v.userData.phone_number.$error}">
                             <input type="tel" id="number" class="form-control p-4 m-auto" placeholder="phone number"
-                               aria-describedby="error-phone-number" v-model.lazy="$v.userData.phone_number.$model">
+                               aria-describedby="error-phone-number" v-model.lazy="$v.userData.phone_number.$model" maxlength="11">
 
-                            <p id="error-phone-number" class="error" v-if="!$v.userData.phone_number.minLength">Phone number cannot not be more
+                            <!-- <p id="error-phone-number" class="error" v-if="!$v.userData.phone_number.minLength">Phone number cannot not be more
                                 than
                                 {{$v.userData.phone_number.params.minLength.min}} digits
-                            </p>
-
-                             <p id="error-phone-number" class="error" v-if="!$v.userData.phone_number.integer">Phone number must be a number/p>
+                            </p> -->
+                             <div v-if="$v.userData.phone_number.$error" class="error">
+                                <p id="error-phone-number"  v-if="!$v.userData.phone_number.validPhoneNumber">Phone number must be up to 11 chaacters</p>
+                             </div>
 
 
                             <div v-if="$v.userData.phone_number.$error">
@@ -90,14 +89,13 @@
                             <input type="password" id="password" class="form-control p-4 m-auto"
                             aria-describedby="error-password" v-model.lazy="$v.userData.password.$model" placeholder="Password">
 
-
-
-                            <div v-if="$v.userData.password.$error">
-                                <p id="error-password" class="error" v-if="!$v.userData.password.strongPassword">
+                             <p id="error-password" v-if="!$v.userData.password.strongPassword">
                                     Password must have 1 lowercase, 1 uppercase, 1 digit and 8 characters long
-                                </p>
+                            </p>
 
-                                <p id="error-password"  v-if="!$v.userData.password.required">Password is required</p>
+
+                            <div v-if="$v.userData.password.$error" class="error">
+                                <p id="error-password" class="error"  v-if="!$v.userData.password.required">Password is required</p>
                             </div>
                         </div>
 
@@ -107,13 +105,13 @@
                             <input type="password" id="confirm-password" class="form-control p-4 m-auto"
                                 aria-describedby="error-confirm-password" v-model.lazy="$v.userData.confirm_password.$model" placeholder="Confirm password">
 
-                            <div v-if="$v.userData.confirm_password.$error">
-                            </div>
-
-                            <div v-if="FormErrors" class="error">
-                                <p  id="error-confirm-password" v-if="!$v.userData.confirm_password.required">A password confirmation is
+                            <div v-if="$v.userData.confirm_password.$error" class="error">
+                                 <p  id="error-confirm-password" v-if="!$v.userData.confirm_password.required">A password confirmation is
                                     required
                                 </p>
+                            </div>
+
+                            <div v-if="$v.userData.confirm_password.$error" class="error">
                                  <p  id="error-confirm-password"  v-if="!$v.userData.confirm_password.sameAsPassword">
                                      Passwords must be identical
                                 </p>
@@ -210,7 +208,10 @@
                     required,
                     integer,
                     numeric,
-                    minLength: minLength(11)
+                    validPhoneNumber(phone_number) {
+                        return /^[0]\d{10}$/.test(phone_number)
+                    }
+                    // minLength: minLength(11)
                 },
                 password: {
                     required,
@@ -263,7 +264,7 @@
                             this.loader = false;
                             this.disabled = false;
                             console.log(error.response.data.errors || error.response.data.msg)
-                            // this.errors = error.response.data.errors;
+                            this.errors = error.response.data.errors;
                             // alert(this.errors)
                             // console.log(error)
                         })
