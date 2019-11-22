@@ -96,10 +96,6 @@
                 email: {
                     required,
                     email
-                    // validEmail(email){
-                    //      return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-
-                    // }
                 },
 
                 password: {
@@ -128,10 +124,16 @@
 
                         axios.post("/users/login", this.loginDetails)
                             .then(response => {
-                                //debugger
-                                this.dashboard();
+                                debugger
+                                let details = response.data;
+                                if(details.status= true){
+                                    localStorage.setItem('token', JSON.stringify(details.token))
+                                }
+                                //console.log(response)
+                                //this.dashboard();
                             })
                             .catch(function (error) {
+                                debugger
                                 console.log(error.response)
                                 this.msg = error.response.data.msg
                                 // handle error

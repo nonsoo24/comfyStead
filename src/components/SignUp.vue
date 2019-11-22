@@ -124,7 +124,7 @@
                             Privacy and Policy.</p>
 
                             <!-- login button -->
-                        <button class="login-button" @click="createUser">Login</button>
+                        <button class="login-button" @click.prevent="createUser">Login</button>
 
 
                         <p class="option">OR</p>

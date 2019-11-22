@@ -6,9 +6,12 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Vuelidate from 'vuelidate'
 import axios from 'axios'
+import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
+import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
 
 
 Vue.use(Vuelidate);
+Vue.use(VueCtkDateTimePicker);
 Vue.config.productionTip = false
 
 axios.defaults.headers.get['Accepts'] = 'application/json';
