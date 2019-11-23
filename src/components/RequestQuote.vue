@@ -69,7 +69,13 @@
 
                         </div>
                         <div>
-                            <button>Request Quote</button>
+                            <button id ="quote-button" @click="requestQuote()">Request Quote</button>
+                             <button id ="request-button">
+                                 <span>
+                                     <img src="../assets/img/icons/checkmark.png" alt="checkmark" class="m-2">
+                                 </span>
+                                 Quote requested
+                            </button>
                         </div>
                     </div>
                     <p class="card-text text-left review">Being a mother of three boys I know the challenges
@@ -80,7 +86,7 @@
                 </div>
             </div>
 
-             <button class=" d-block text-left btn finish-button" @click="completeBooking()"> Finish </button>
+             <button class=" d-block text-left btn finish-button" id ="finish-button"> Finish </button>
 
 
             <!-- <div class="card m-auto">
@@ -157,19 +163,51 @@ export default {
     },
 
     methods: {
-         completeBooking(){
-            this.$router.push({
-                    path: 'complete-booking'
+        requestQuote() {
+            let userToken = localStorage.getItem('token')
+            if (userToken === null) {
+                //debugger
+                this.$router.push({
+                    path: 'signup'
                 })
+            } else {
+
+                 // axios.post("/users/login", customerRequest)
+                //             .then(response => {
+                //                 let details = response.data;
+                //                 if(details.status= true){
+                //                     localStorage.setItem('token', JSON.stringify(details.token))
+                //                 }
+
+                //             })
+                //             .catch(function (error) {
+                //                 console.log(error.response)
+                //                 this.msg = error.response.data.msg
+                //                 console.log(error.response.data.errors || error.response.data.msg);
+                //             })
+
+                let customerRequest = localStorage.getItem('TaskDetails')
+                if(customerRequest){
+                    let requestButton = document.getElementById('request-button');
+                    let quoteButton = document.getElementById('quote-button')
+                    requestButton.style.display = 'block';
+                    quoteButton.style.display ='none'
+                }
+
+                // this.$router.push({
+                //     path: 'complete-booking'
+                // })
+            }
+
         }
     },
 
-   
 
-    created(){
+
+    created() {
         testimonials.forEach(review => {
-                this.reviews.push(review);
-            })
+            this.reviews.push(review);
+        })
 
     }
 
@@ -199,6 +237,23 @@ export default {
         line-height: 19px;
         border: none;
         margin-top: 10px;
+        display: visible;
+    }
+
+    #request-button{
+        border-radius: 4px;
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px !important;
+        text-align: center !important;
+        color: #333456 !important;
+        padding: 10px 21px !important;
+        border: none;
+        background: #F5F5F7;
+        margin-top: 10px;
+        display: none;
+
     }
 
     h6{
@@ -260,7 +315,6 @@ export default {
         box-shadow: 0px 1px 10px rgba(125, 50, 0, 0.25);
         width: 60%;
         margin: auto;
-
     }
 
 

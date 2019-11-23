@@ -124,7 +124,7 @@
 
                         axios.post("/users/login", this.loginDetails)
                             .then(response => {
-                                debugger
+                               // debugger
                                 let details = response.data;
                                 if(details.status= true){
                                     localStorage.setItem('token', JSON.stringify(details.token))
@@ -133,7 +133,7 @@
                                 //this.dashboard();
                             })
                             .catch(function (error) {
-                                debugger
+                                //debugger
                                 console.log(error.response)
                                 this.msg = error.response.data.msg
                                 // handle error

@@ -101,10 +101,11 @@
                         <div class="row">
                             <div class="col-md-6" :class="{ invalid: $v.bookingSummary.date.$error}">
                                 <label class="appointment" for="date">Date</label>
-                                    <VueCtkDateTimePicker :no-value-to-custom-elem="(true|false)">
-                                        <input type="date" class="form-control" id="date"
+                                    <!-- <VueCtkDateTimePicker :no-value-to-custom-elem="(true|false)">
+                                        
+                                    </VueCtkDateTimePicker> -->
+                                    <input type="date" class="form-control" id="date"
                                         v-model.lazy="$v.bookingSummary.date.$model" aria-describedby="date-error">
-                                    </VueCtkDateTimePicker>
 
 
                                 <!-- validation error -->
