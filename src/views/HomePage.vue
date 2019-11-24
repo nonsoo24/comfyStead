@@ -14,25 +14,28 @@
 
             <!-- services display -->
             <div class="advert d-flex flex-row">
-                <div class="p-4" service>
+                <div class="service" >
                     <img src="../assets/img/icons/cleaning.png" alt="cleaning">
                     <p>Cleaning</p>
                 </div>
-                <div class="p-4">
+                <div class="service">
                      <img src="../assets/img/icons/carpentery.png" alt="cleaning">
                     <p class="">Carpentry</p>
                 </div>
-                <div class="p-4">
+                <div class="service">
                      <img src="../assets/img/icons/plumbering.png" alt="cleaning">
                     <p>Plumbing</p>
                 </div>
-                <div class="p-4">
+                <div class="service">
                     <img src="../assets/img/icons/painting.png" alt="painting">
                     <p>Painting</p>
                 </div>
-                <div class="p-4">
+                <div class="service">
                      <img src="../assets/img/icons/fumigation.png" alt="cleaning">
                     <p>Fumigation</p>
+                </div>
+                <div class="arrow">
+                     <img src="../assets/img/icons/arrow3.png" alt="arrow">
                 </div>
             </div>
         </section>

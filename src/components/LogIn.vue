@@ -41,7 +41,7 @@
                         <!-- <router-link  >Forgot password?</router-link> -->
 
                         <!-- buttons -->
-                        <button class="login-button" type="submit" :disabled="$v.loginDetails.$invalid" @click.prevent="login">
+                        <button class="login-button" type="submit" @click.prevent="login">
                                 <span class="spinner-border m-auto" role="status" aria-hidden="true"></span>
                                 <span class="login">Login</span>
                         </button>

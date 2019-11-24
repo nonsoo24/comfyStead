@@ -45,9 +45,8 @@ h2 {
     border: 1px solid #EAEAEA;
 
 }
-
-[service] {
-    margin-left: 280px;
+.service {
+    margin: 20px 0px 0px  152px;
 }
 
 
@@ -317,4 +316,10 @@ div.owl-carousel .owl-nav .owl-next {
 .owl-stage .owl-item{
     width: 217px!important;
 
+}
+
+.arrow{
+    margin-left: 50px;
+    padding: 30px 80px;
+    background: #F5F5F7;
 }
