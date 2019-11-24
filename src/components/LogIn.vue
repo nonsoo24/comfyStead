@@ -39,15 +39,25 @@
 
                         <a href="#">Forgot password?</a>
                         <!-- <router-link  >Forgot password?</router-link> -->
-                        <button class="login-button" :disabled="$v.loginDetails.$invalid" @click.prevent="login">Login</button>
+
+                        <!-- buttons -->
+                        <button class="login-button" type="submit" :disabled="$v.loginDetails.$invalid" @click.prevent="login">
+                                <span class="spinner-border m-auto" role="status" aria-hidden="true"></span>
+                                <span class="login">Login</span>
+                        </button>
                         <p class="option">OR</p>
 
+
                         <div class="m-auto">
-                            <button class="facebook"><span><img src="/assets/img/facebook.png" alt="facebook" class="mt-0"></span> Log in with facebook</button>
+                            <button class="facebook" type="submit"><span><img src="/assets/img/facebook.png" alt="facebook" class="mt-0"></span> Log in with facebook</button>
                         </div>
 
                         <div class="m-auto">
-                            <button class="google">Log in with google</button>
+                            <button class="google" type="submit">
+                                 <span>
+                                    <img src="../assets/img/icons/google.png" alt="google" class="mt-0">
+                                </span> Log in with google
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -73,7 +83,7 @@
                 submitStatus: null,
                 // disablebutton: false,
                 // disabled: false,
-                // loader: false,
+                //loader: false,
                 msg: "",
                 errors: {},
                 loginDetails: {
@@ -105,45 +115,52 @@
         },
 
 
-            methods: {
+        methods: {
 
-                dashboard() {
-                    this.$router.push({
-                        path: 'customer'
-                    })
+            dashboard() {
+                this.$router.push({
+                    path: 'customer'
+                })
 
-                },
-                login() {
+            },
+            login() {
 
-                    this.$v.$touch()
-                    if (this.$v.$invalid) {
-                        this.submitStatus = 'ERROR'
-                    } else {
-                        // this.disablebutton = true;
-                        this.loader = true;
+                this.$v.$touch()
+                if (this.$v.$invalid) {
+                    this.submitStatus = 'ERROR'
+                } else {
+                    //debugger
+                   let loader = document.querySelector('.spinner-border');
+                   let buttonText = document.querySelector('.login');
+                   let loginButton = document.querySelector('.login-button');
+                   loader.style.display = 'block'
+                   buttonText.style.display = 'none'
+                   loginButton.classList.add("Disabled");
 
-                        axios.post("/users/login", this.loginDetails)
-                            .then(response => {
-                               // debugger
-                                let details = response.data;
-                                if(details.status= true){
-                                    localStorage.setItem('token', JSON.stringify(details.token))
-                                }
-                                //console.log(response)
-                                //this.dashboard();
-                            })
-                            .catch(function (error) {
-                                //debugger
-                                console.log(error.response)
-                                this.msg = error.response.data.msg
-                                // handle error
-                                console.log(error.response.data.errors || error.response.data.msg);
-                            })
-                    }
+
+
+                    axios.post("/users/login", this.loginDetails)
+                        .then(response => {
+                            // debugger
+                            let details = response.data;
+                            if (details.status = true) {
+                                localStorage.setItem('token', JSON.stringify(details.token))
+                            }
+                            //console.log(response)
+                            //this.dashboard();
+                        })
+                        .catch(function (error) {
+                            //debugger
+                            console.log(error.response)
+                            this.msg = error.response.data.msg
+                            // handle error
+                            console.log(error.response.data.errors || error.response.data.msg);
+                        })
                 }
             }
-
         }
+
+    }
 
 </script>
 

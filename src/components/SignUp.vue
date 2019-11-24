@@ -124,7 +124,11 @@
                             Privacy and Policy.</p>
 
                             <!-- login button -->
-                        <button class="login-button" @click.prevent="createUser">Login</button>
+                            <button class="login-button" type="submit" :disabled="$v.userData.$invalid" @click.prevent="createUser()">
+                                <span class="spinner-border m-auto" role="status" aria-hidden="true"></span>
+                                <span class="login">Create Account</span>
+                            </button>
+                        <!-- <button type="submit" class="create-account-button" @click.prevent="createUser"></button> -->
 
 
                         <p class="option">OR</p>
@@ -133,13 +137,22 @@
                         <!-- login with facebook -->
 
                         <div class="m-auto">
-                            <button class="facebook"> <span><img src="/assets/img/facebook.png" alt="facebook" class="mt-0"></span> Log in with facebook</button>
+                            <button type="submit" class="facebook">
+                                <span>
+                                    <img src="/assets/img/facebook.png" alt="facebook" class="mt-0">
+                                </span> Sign up with facebook
+                            </button>
                         </div>
 
                         <!-- login with google -->
 
                         <div class="m-auto">
-                            <button class="google">Log in with google</button>
+                            <button type="submit" class="google">
+                                <span>
+                                    <img src="../assets/img/icons/google.png" alt="google" class="mt-0">
+                                </span>
+                                Sign up with google
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -172,11 +185,11 @@
             return {
                 disabled: false,
                 submitStatus: null,
-                loader: false,
-                uiState: "submit not clicked",
-                FormErrors: false,
-                formTouched: false,
-                empty: true,
+                //loader: false,
+                //uiState: "submit not clicked",
+                //FormErrors: false,
+                //formTouched: false,
+                //empty: true,
                 errors: {},
                 userData: {
                     first_name: '',
@@ -243,10 +256,17 @@
 
 
             createUser() {
-                this.formTouched = !this.$v.userData.$anyDirty;
-                this.FormErrors = this.$v.userData.$anyError;
-                this.uiState = "submit clicked";
-                if (this.FormErrors === false && this.formTouched === false) {
+                this.$v.$touch()
+                if (this.$v.$invalid) {
+                    this.submitStatus = 'ERROR'
+                } else {
+                   let loader = document.querySelector('.spinner-border');
+                   let buttonText = document.querySelector('.login');
+                   let loginButton = document.querySelector('.login-button');
+                   loader.style.display = 'block'
+                   buttonText.style.display = 'none'
+                   loginButton.classList.add("Disabled");
+
                      axios.post("/users/register", this.userData, {
                             headers: {
                                 'content-type': 'application/json',
@@ -269,9 +289,7 @@
                             // console.log(error)
                         })
                     this.uiState = "form submitted";
-                } else{
-                        this.uiState = "form not submitted";
-                    }
+                }
 
 
 
