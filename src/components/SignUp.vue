@@ -89,9 +89,11 @@
                             <input type="password" id="password" class="form-control p-4 m-auto"
                             aria-describedby="error-password" v-model.lazy="$v.userData.password.$model" placeholder="Password">
 
+                        <div v-if="$v.userData.password.$error" class="error">
                              <p id="error-password" v-if="!$v.userData.password.strongPassword">
                                     Password must have 1 lowercase, 1 uppercase, 1 digit and 8 characters long
                             </p>
+                        </div>
 
 
                             <div v-if="$v.userData.password.$error" class="error">
@@ -124,7 +126,7 @@
                             Privacy and Policy.</p>
 
                             <!-- login button -->
-                            <button class="login-button" type="submit" :disabled="$v.userData.$invalid" @click.prevent="createUser()">
+                            <button class="login-button"  @click.prevent="createUser()">
                                 <span class="spinner-border m-auto" role="status" aria-hidden="true"></span>
                                 <span class="login">Create Account</span>
                             </button>
@@ -256,6 +258,38 @@
 
 
             createUser() {
+                // this.$v.$touch()
+                // if (this.$v.$invalid) {
+                //     this.submitStatus = 'ERROR'
+                // } else {
+
+                //      axios.post("/users/register", this.userData, {
+                //             headers: {
+                //                 'content-type': 'application/json',
+                //                 'Accept': 'application/json'
+                //             }
+                //         })
+                //         .then(response => {
+                //             this.loader = false;
+                //             this.verifyEmail();
+                //             console.log(this.userData)
+                //             console.log("response", response.data.msg)
+                //             console.log(this.userData)
+                //         })
+                //         .catch(error => {
+                //             this.loader = false;
+                //             this.disabled = false;
+                //             console.log(error.response.data.errors || error.response.data.msg)
+                //             this.errors = error.response.data.errors;
+                //             alert(this.errors)
+                //             console.log(error)
+                //         })
+                //     this.uiState = "form submitted";
+                // }
+
+
+
+
                 this.$v.$touch()
                 if (this.$v.$invalid) {
                     this.submitStatus = 'ERROR'
@@ -266,8 +300,8 @@
                    loader.style.display = 'block'
                    buttonText.style.display = 'none'
                    loginButton.classList.add("Disabled");
-
-                     axios.post("/users/register", this.userData, {
+                    // alert("hello world")
+                    axios.post("/users/register", this.userData, {
                             headers: {
                                 'content-type': 'application/json',
                                 'Accept': 'application/json'
@@ -276,53 +310,19 @@
                         .then(response => {
                             this.loader = false;
                             this.verifyEmail();
-                            //console.log(this.userData)
+                            console.log(this.userData)
                             console.log("response", response.data.msg)
-                            //console.log(this.userData)
+                            console.log(this.userData)
                         })
                         .catch(error => {
                             this.loader = false;
                             this.disabled = false;
                             console.log(error.response.data.errors || error.response.data.msg)
                             this.errors = error.response.data.errors;
-                            // alert(this.errors)
-                            // console.log(error)
+                            alert(this.errors)
+                            console.log(error)
                         })
-                    this.uiState = "form submitted";
                 }
-
-
-
-
-                // this.$v.$touch()
-                // if (this.$v.$invalid) {
-                //     this.submitStatus = 'ERROR'
-                // } else {
-                //     this.disabled = true;
-                //     this.loader = true;
-                    // alert("hello world")
-                    // axios.post("/users/register", this.userData, {
-                    //         headers: {
-                    //             'content-type': 'application/json',
-                    //             'Accept': 'application/json'
-                    //         }
-                    //     })
-                    //     .then(response => {
-                    //         this.loader = false;
-                    //         this.verifyEmail();
-                            //console.log(this.userData)
-                            // console.log("response", response.data.msg)
-                            //console.log(this.userData)
-                        // })
-                        // .catch(error => {
-                        //     this.loader = false;
-                        //     this.disabled = false;
-                        //     console.log(error.response.data.errors || error.response.data.msg)
-                            // this.errors = error.response.data.errors;
-                            // alert(this.errors)
-                            // console.log(error)
-    //                     })
-    //             }
             }
         }
     }

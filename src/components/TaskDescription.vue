@@ -101,8 +101,13 @@
                         <div class="row">
                             <div class="col-md-6" :class="{ invalid: $v.bookingSummary.date.$error}">
                                 <label class="appointment" for="date">Date</label>
-                                    <!-- <VueCtkDateTimePicker :no-value-to-custom-elem="(true|false)">
 
+                                   <!-- <VueCtkDateTimePicker :no-value-to-custom-elem="(true|false)" >
+                                    ...
+                                            <input type="text" />
+                                            ... or
+                                            <button type="button">Label</button>
+                                    ...
                                     </VueCtkDateTimePicker> -->
                                     <input type="date" class="form-control" id="date"
                                         v-model.lazy="$v.bookingSummary.date.$model" aria-describedby="date-error">
@@ -166,6 +171,7 @@
 import NavBar from '../components/HomePage/NavBar.vue';
 import TheFooter from '../components/HomePage/TheFooter.vue';
 import axios from 'axios'
+import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
 import {
     required,
     minLength,
