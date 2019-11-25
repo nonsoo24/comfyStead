@@ -126,6 +126,8 @@
                     <p>Pay securely after your job <br> has been completed to <br> your satisfaction</p>
                 </div>
             </div>
+
+            <!-- <img src="../assets/img/icons/how-it-works.svg" alt="works"> -->
         </section>
 
         <!-- services -->
@@ -304,7 +306,8 @@
             <div class="get-app-div">
                 <h3 class="m-auto">Get the app</h3>
                 <p class="m-auto">It's even better on your phone</p>
-                <img src="assets/img/playstore.svg" class="mt-4" alt="google playstore">
+                <img src="assets/img/playstore.svg" class="mt-4 pr-3" alt="google playstore">
+                <img src="../assets/img/icons/ios-store.svg" class="mt-4" alt="iOs-store">
 
                 <div class="container row mt-4 content">
                     <div class="col-md-6">

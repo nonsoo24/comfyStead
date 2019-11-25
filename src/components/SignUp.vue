@@ -56,9 +56,10 @@
                             <input type="text" id="email" class="form-control
                             p-4 m-auto" aria-describedby="error-email" placeholder="Email address" v-model.lazy="$v.userData.email.$model">
 
-                            <p id="error-email" v-if="!$v.userData.email.email">Please enter a valid E-mail address</p>
+                            e<p id="error-email" class="error" v-if="!$v.userData.email.email">Please enter a valid email address</p>
+
                             <div class="error" v-if="$v.userData.email.$error">
-                                <p id="error-email" v-if="!$v.userData.email.required">E-mail is required</p>
+                                <p id="error-email"  v-if="!$v.userData.email.required">E-mail is required</p>
                             </div>
                         </div>
 
