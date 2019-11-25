@@ -126,6 +126,8 @@
                     <p>Pay securely after your job <br> has been completed to <br> your satisfaction</p>
                 </div>
             </div>
+
+            <!-- <img src="../assets/img/icons/how-it-works.svg" alt="works"> -->
         </section>
 
         <!-- services -->
