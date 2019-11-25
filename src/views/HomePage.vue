@@ -252,7 +252,7 @@
                 </div>
 
 
-                <div class="col-md-6 owl-carousel owl-theme">
+                <!-- <div class="col-md-6 owl-carousel owl-theme">
                     <div class="testimonal p-3 item">
                         <p class="text-left ">I was interested. So I asked for someone to clean my house. They jumped at
                             it. 10 minutes later a certain Godwin called me. Godwin showed up, dressed and well
@@ -296,7 +296,7 @@
                             <p class="text-left pt-3 pl-2 font-weight-bolder">Folajimi Aroloye</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
         </section>
@@ -306,7 +306,8 @@
             <div class="get-app-div">
                 <h3 class="m-auto">Get the app</h3>
                 <p class="m-auto">It's even better on your phone</p>
-                <img src="assets/img/playstore.svg" class="mt-4" alt="google playstore">
+                <img src="assets/img/playstore.svg" class="mt-4 pr-3" alt="google playstore">
+                <img src="../assets/img/icons/ios-store.svg" class="mt-4" alt="iOs-store">
 
                 <div class="container row mt-4 content">
                     <div class="col-md-6">
