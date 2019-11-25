@@ -319,7 +319,7 @@ div.owl-carousel .owl-nav .owl-next {
 }
 
 .arrow{
-    margin-left: 50px;
-    padding: 30px 80px;
+    margin-left: 3.125em;
+    padding: 1.875em 6.25em;
     background: #F5F5F7;
 }
