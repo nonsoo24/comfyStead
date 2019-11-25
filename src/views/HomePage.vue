@@ -250,7 +250,7 @@
                 </div>
 
 
-                <div class="col-md-6 owl-carousel owl-theme">
+                <!-- <div class="col-md-6 owl-carousel owl-theme">
                     <div class="testimonal p-3 item">
                         <p class="text-left ">I was interested. So I asked for someone to clean my house. They jumped at
                             it. 10 minutes later a certain Godwin called me. Godwin showed up, dressed and well
@@ -294,7 +294,7 @@
                             <p class="text-left pt-3 pl-2 font-weight-bolder">Folajimi Aroloye</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
         </section>
