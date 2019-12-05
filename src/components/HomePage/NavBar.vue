@@ -56,9 +56,9 @@ export default {
 
 
     li {
-        font-family: "Avenir Next LT Pro";
+        font-family:"avenir-next-lt-pro-regular";
         font-size: 0.875em;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 1.0625em;
         text-align: center;
         color: #333456;

@@ -6,8 +6,7 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Vuelidate from 'vuelidate'
 import axios from 'axios'
-//import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
-//import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
+
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
 

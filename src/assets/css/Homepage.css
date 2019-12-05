@@ -1,9 +1,45 @@
 @font-face {
-    font-family: 'Avenir';
-    src: url('/assets/fonts/AvenirNextLTpro-Bold.otf') format('otf');
-    font-weight: medium;
-    font-style: normal;
+    font-family: "avenir-next-lt-pro-regular";
+    src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("woff"),
+        url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"),
+        url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("truetype");
 }
+
+@font-face {
+    font-family: "avenir-next-lt-pro-italic";
+    src: url("../../assets/fonts/AvenirNextLTPro-It.otf") format("woff"),
+        url("../../assets/fonts/AvenirNextLTPro-It.otf") format("opentype"),
+        url("../../assets/fonts/AvenirNextLTPro-It.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "avenir-next-lt-pro-demi";
+    src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff"),
+        url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"),
+        url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "avenir-next-lt-pro-demi-condensed";
+    src: url("../../assets/fonts/AvenirNextLTPro-DemiCn.otf") format("woff"),
+        url("../../assets/fonts/AvenirNextLTPro-DemiCn.otf") format("opentype"),
+        url("../../assets/fonts/AvenirNextLTPro-DemiCn.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "avenir-next-lt-pro-bold";
+    src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("woff"),
+        url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"),
+        url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Gilroy-Bold ☞';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gilroy-Bold ☞'), url('../../assets/fonts/Gilroy-Bold.woff') format('woff');
+}
+
 
 [landing-content] {
     margin-top: 3.125em;
@@ -16,11 +52,11 @@
 }
 
 h2 {
-    font-family: 'Avenir';
     font-style: normal;
     font-weight: 600 !important;
     font-size: 3em !important;
     /* line-height: 3.5em; */
+    font-family: 'Gilroy-Bold ☞';
     color: #FFFFFF;
     padding-top: 4em;
     margin-left: 113px;
@@ -28,50 +64,33 @@ h2 {
 }
 
 .word {
-    font-family: 'Avenir Next LT';
+    font-family: "avenir-next-lt-pro-regular";
     font-size: 1.5em !important;
     /* line-height: 2.0625em; */
     margin-left: 113px;
     color: #FFFFFF;
     text-align: left;
-    font-weight: normal;
 }
 
 .advert {
     background: #fff;
-    ;
     box-shadow: 0px 2px 15px rgba(98, 98, 98, 0.25);
     height: 80px;
     border: 1px solid #EAEAEA;
 
 }
+
+.service>p {
+    font-family: "avenir-next-lt-pro-regular";
+}
+
 .service {
-    margin: 20px 0px 0px  152px;
+    margin: 20px 0px 0px 152px;
 }
 
 
 /* how iGofer works */
-h6 {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 30px;
-    color: #000000;
-    text-align: center !important;
-    margin-top: 1rem !important;
-}
 
-h6+p {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center !important;
-    margin-top: 1rem !important;
-
-}
 
 [how-it-works] {
     margin-bottom: 5em;
@@ -86,6 +105,27 @@ h6+p {
     display: block;
     margin: auto;
     padding: 1.4em
+}
+
+[how-it-works] h6 {
+    font-family: "avenir-next-lt-pro-regular";
+    color: #333456;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    text-align: center !important;
+    margin-top: 1rem !important;
+
+}
+
+
+[how-it-works] p {
+    font-family: "avenir-next-lt-pro-regular";
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 300;
+    text-align: center !important;
+    margin-top: 1rem !important;
 }
 
 
@@ -159,7 +199,7 @@ img {
     cursor: pointer;
 }
 
-a:hover{
+a:hover {
     text-decoration: none;
 }
 
@@ -168,6 +208,7 @@ a:hover{
 
 h4 {
     font-size: 36px !important;
+    font-family: 'Gilroy-Bold ☞' !important;
     line-height: 40px;
     color: #333456;
 }
@@ -226,7 +267,7 @@ li span {
     left: 7px;
 }
 
-[get-app] svg {
+.phone {
     position: relative;
     left: 250px
 }
@@ -239,15 +280,25 @@ li span {
     font-size: 24px !important;
     font-weight: 600;
     padding-bottom: 5px;
+    color: #333456;
 }
 
-h3 {
-    font-size: 43px;
-    font-weight: 600;
-}
 
 .get-app-div {
     padding-top: 75px;
+}
+
+.get-app-div>h3 {
+    font-family: 'Gilroy-Bold ☞';
+    color: #333456;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 49px;
+}
+
+.get-app-text {
+    color: #333456 !important;
+    font-size: 18px !important;
 }
 
 .content {
@@ -261,6 +312,8 @@ h3 {
 
 .customer {
     font-size: 42px;
+    font-family: 'Gilroy-Bold ☞';
+    color: #333456;
 }
 
 .customer-word {
@@ -276,7 +329,7 @@ h3 {
     margin-top: 0px;
 }
 
-.owl-item{
+.owl-item {
     width: 370px !important;
 }
 
@@ -292,7 +345,8 @@ h3 {
     top: calc(50% - 33px);
 }
 
-.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
     background: #FF6600 !important;
 }
 
@@ -313,12 +367,12 @@ div.owl-carousel .owl-nav .owl-next {
     display: none !important;
 }
 
-.owl-stage .owl-item{
-    width: 217px!important;
+.owl-stage .owl-item {
+    width: 217px !important;
 
 }
 
-.arrow{
+.arrow {
     margin-left: 3.125em;
     padding: 1.875em 6.25em;
     background: #F5F5F7;

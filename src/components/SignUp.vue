@@ -8,6 +8,9 @@
             <div class="m-auto credential">
                 <h4 class="pb-3 font-weight-bolder">Create your account</h4>
                 <div class="credential-item m-auto">
+                    <div>
+                        <P>{{responses}}</P>
+                    </div>
 
                     <form @submit.prevent="createUser">
 
@@ -56,7 +59,7 @@
                             <input type="text" id="email" class="form-control
                             p-4 m-auto" aria-describedby="error-email" placeholder="Email address" v-model.lazy="$v.userData.email.$model">
 
-                            e<p id="error-email" class="error" v-if="!$v.userData.email.email">Please enter a valid email address</p>
+                            <p id="error-email" class="error" v-if="!$v.userData.email.email">Please enter a valid email address</p>
 
                             <div class="error" v-if="$v.userData.email.$error">
                                 <p id="error-email"  v-if="!$v.userData.email.required">E-mail is required</p>
@@ -194,6 +197,7 @@
                 //formTouched: false,
                 //empty: true,
                 errors: {},
+                responses: '',
                 userData: {
                     first_name: '',
                     last_name: '',
@@ -259,37 +263,6 @@
 
 
             createUser() {
-                // this.$v.$touch()
-                // if (this.$v.$invalid) {
-                //     this.submitStatus = 'ERROR'
-                // } else {
-
-                //      axios.post("/users/register", this.userData, {
-                //             headers: {
-                //                 'content-type': 'application/json',
-                //                 'Accept': 'application/json'
-                //             }
-                //         })
-                //         .then(response => {
-                //             this.loader = false;
-                //             this.verifyEmail();
-                //             console.log(this.userData)
-                //             console.log("response", response.data.msg)
-                //             console.log(this.userData)
-                //         })
-                //         .catch(error => {
-                //             this.loader = false;
-                //             this.disabled = false;
-                //             console.log(error.response.data.errors || error.response.data.msg)
-                //             this.errors = error.response.data.errors;
-                //             alert(this.errors)
-                //             console.log(error)
-                //         })
-                //     this.uiState = "form submitted";
-                // }
-
-
-
 
                 this.$v.$touch()
                 if (this.$v.$invalid) {
@@ -309,9 +282,13 @@
                             }
                         })
                         .then(response => {
-                            this.loader = false;
+                            loginButton.classList.remove("Disabled");
+                            let details = response.data;
+                            this.responses = details.msg
                             this.verifyEmail();
                             console.log(this.userData)
+                            console.log(response)
+                            console.log(response.data)
                             console.log("response", response.data.msg)
                             console.log(this.userData)
                         })
