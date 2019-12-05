@@ -153,7 +153,7 @@
                         <!-- login with google -->
 
                         <div class="m-auto">
-                            <button type="submit" class="google">
+                            <button type="submit" class="google" @click="signUpWithGoogle">
                                 <span>
                                     <img src="../assets/img/icons/google.png" alt="google" class="mt-0">
                                 </span>
@@ -188,122 +188,175 @@
     import TheFooter from '../components/HomePage/TheFooter.vue';
     export default {
         data() {
-            return {
-                disabled: false,
-                submitStatus: null,
-                //loader: false,
-                //uiState: "submit not clicked",
-                //FormErrors: false,
-                //formTouched: false,
-                //empty: true,
-                errors: {},
-                responses: '',
+                return {
+                    disabled: false,
+                    submitStatus: null,
+                    //loader: false,
+                    //uiState: "submit not clicked",
+                    //FormErrors: false,
+                    //formTouched: false,
+                    //empty: true,
+                    errors: {},
+                    responses: '',
+                    userData: {
+                        first_name: '',
+                        last_name: '',
+                        email: '',
+                        phone_number: '',
+                        password: '',
+                        confirm_password: '',
+                        // termsAndCondition: false,
+                    }
+                }
+            },
+            validations: {
                 userData: {
-                    first_name: '',
-                    last_name: '',
-                    email: '',
-                    phone_number: '',
-                    password: '',
-                    confirm_password: '',
-                    // termsAndCondition: false,
-                }
-            }
-        },
-        validations: {
-            userData: {
-                email: {
-                    required,
-                    email
-                },
+                    email: {
+                        required,
+                        email
+                    },
 
-                first_name: {
-                    required,
-                    minLength: minLength(3)
-                },
-                last_name: {
-                    required,
-                    minLength: minLength(3)
-                },
-                phone_number: {
-                    required,
-                    integer,
-                    numeric,
-                    validPhoneNumber(phone_number) {
-                        return /^[0]\d{10}$/.test(phone_number)
+                    first_name: {
+                        required,
+                        minLength: minLength(3)
+                    },
+                    last_name: {
+                        required,
+                        minLength: minLength(3)
+                    },
+                    phone_number: {
+                        required,
+                        integer,
+                        numeric,
+                        validPhoneNumber(phone_number) {
+                            return /^[0]\d{10}$/.test(phone_number)
+                        }
+                        // minLength: minLength(11)
+                    },
+                    password: {
+                        required,
+                        strongPassword(password) {
+                            return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(password)
+
+                        }
+                    },
+                    confirm_password: {
+                        required,
+                        sameAsPassword: sameAs('password')
                     }
-                    // minLength: minLength(11)
-                },
-                password: {
-                    required,
-                    strongPassword(password) {
-                        return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(password)
-
-                    }
-                },
-                confirm_password: {
-                    required,
-                    sameAsPassword: sameAs('password')
                 }
-            }
 
-        },
-
-        components: {
-            'nav-bar': NavBar,
-            'the-footer': TheFooter
-        },
-
-        methods: {
-
-            verifyEmail() {
-                this.$router.push({
-                    path: 'verifyEmail'
-                })
             },
 
+            components: {
+                'nav-bar': NavBar,
+                'the-footer': TheFooter
+            },
 
-            createUser() {
+            async created() {
+                    try {
+                        await this.$auth.renewTokens();
+                    } catch (e) {
+                        console.log(e);
+                    }
+                },
 
-                this.$v.$touch()
-                if (this.$v.$invalid) {
-                    this.submitStatus = 'ERROR'
-                } else {
-                   let loader = document.querySelector('.spinner-border');
-                   let buttonText = document.querySelector('.login');
-                   let loginButton = document.querySelector('.login-button');
-                   loader.style.display = 'block'
-                   buttonText.style.display = 'none'
-                   loginButton.classList.add("Disabled");
-                    // alert("hello world")
-                    axios.post("/users/register", this.userData, {
-                            headers: {
-                                'content-type': 'application/json',
-                                'Accept': 'application/json'
-                            }
+                methods: {
+
+                    signUpWithGoogle() {
+                        this.$auth.signUpWithGoogle();
+                    },
+
+                    // handleLoginEvent(data) {
+                    //     this.isAuthenticated = data.loggedIn;
+                    //     this.profile = data.profile;
+                    // },
+
+                    verifyEmail() {
+                        this.$router.push({
+                            path: 'verifyEmail'
                         })
-                        .then(response => {
-                            loginButton.classList.remove("Disabled");
-                            let details = response.data;
-                            this.responses = details.msg
-                            this.verifyEmail();
-                            console.log(this.userData)
-                            console.log(response)
-                            console.log(response.data)
-                            console.log("response", response.data.msg)
-                            console.log(this.userData)
-                        })
-                        .catch(error => {
-                            this.loader = false;
-                            this.disabled = false;
-                            console.log(error.response.data.errors || error.response.data.msg)
-                            this.errors = error.response.data.errors;
-                            alert(this.errors)
-                            console.log(error)
-                        })
+                    },
+
+
+                    createUser() {
+
+                        this.$v.$touch()
+                        if (this.$v.$invalid) {
+                            this.submitStatus = 'ERROR'
+                        } else {
+                            let loader = document.querySelector('.spinner-border');
+                            let buttonText = document.querySelector('.login');
+                            let loginButton = document.querySelector('.login-button');
+                            loader.style.display = 'block'
+                            buttonText.style.display = 'none'
+                            loginButton.classList.add("Disabled");
+                            // alert("hello world")
+                            axios.post("/users/register", this.userData, {
+                                    headers: {
+                                        'content-type': 'application/json',
+                                        'Accept': 'application/json'
+                                    }
+                                })
+                                .then(response => {
+                                    loginButton.classList.remove("Disabled");
+                                    let details = response.data;
+                                    this.responses = details.msg
+                                    this.verifyEmail();
+                                    console.log(this.userData)
+                                    console.log(response)
+                                    console.log(response.data)
+                                    console.log("response", response.data.msg)
+                                    console.log(this.userData)
+                                })
+                                .catch(error => {
+                                    this.loader = false;
+                                    this.disabled = false;
+                                    console.log(error.response.data.errors || error.response.data.msg)
+                                    this.errors = error.response.data.errors;
+                                    alert(this.errors)
+                                    console.log(error)
+                                })
+                        }
+                        // function onSignIn(googleUser) {
+                        //   var id_token = googleUser.getAuthResponse().id_token;
+                        //   ...
+                        // }
+                        // var xhr = new XMLHttpRequest();
+                        //  axios.post('POST', 'https://yourbackend.example.com/tokensignin');
+                        // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                        // xhr.onload = function() {
+                        //   console.log('Signed in as: ' + xhr.responseText);
+                        // };
+                        // xhr.send('idtoken=' + id_token);
+
+                        // headers: {
+                        //                 'content-type': 'application/json',
+                        //                 'Accept': 'application/json'
+                        //             }
+                        //         })
+                        //         .then(response => {
+                        //             loginButton.classList.remove("Disabled");
+                        //             let details = response.data;
+                        //             this.responses = details.msg
+                        //             this.verifyEmail();
+                        //             console.log(this.userData)
+                        //             console.log(response)
+                        //             console.log(response.data)
+                        //             console.log("response", response.data.msg)
+                        //             console.log(this.userData)
+                        //         })
+                        //         .catch(error => {
+                        //             this.loader = false;
+                        //             this.disabled = false;
+                        //             console.log(error.response.data.errors || error.response.data.msg)
+                        //             this.errors = error.response.data.errors;
+                        //             alert(this.errors)
+                        //             console.log(error)
+                        //         })
+                    }
                 }
-            }
         }
-    }
 </script>
 
 
