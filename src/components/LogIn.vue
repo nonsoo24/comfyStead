@@ -143,10 +143,10 @@
                         .then(response => {
                             // debugger
                             let details = response.data;
-                            if (details.status = true) {
+                            //if (details.status = true) {
                                 localStorage.setItem('token', JSON.stringify(details.token))
-                            }
-                            //console.log(response)
+                           // }
+                            console.log(details)
                             //this.dashboard();
                         })
                         .catch(function (error) {

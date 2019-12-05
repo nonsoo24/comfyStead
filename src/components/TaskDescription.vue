@@ -100,17 +100,13 @@
                         <p class="text-left font-weight-bolder">When would you like us to come? </p>
                         <div class="row">
                             <div class="col-md-6" :class="{ invalid: $v.bookingSummary.date.$error}">
-                                <label class="appointment" for="date">Date</label>
+                                <label class="appointment d-block" for="date">Date</label>
 
-                                   <!-- <VueCtkDateTimePicker :no-value-to-custom-elem="(true|false)" >
-                                    ...
-                                            <input type="text" />
-                                            ... or
-                                            <button type="button">Label</button>
-                                    ...
-                                    </VueCtkDateTimePicker> -->
-                                    <input type="date" class="form-control" id="date"
-                                        v-model.lazy="$v.bookingSummary.date.$model" aria-describedby="date-error">
+
+                                      <date-picker v-model="bookingSummary.date" lang="en" type="date" format="d-MMM-YYYY"
+                                      :disabledDates='bookingSummary.disabledDates'> </date-picker>
+                                    <!-- <input type="date" class="form-control" id="date"
+                                        v-model.lazy="$v.bookingSummary.date.$model" aria-describedby="date-error"> -->
 
 
                                 <!-- validation error -->
@@ -126,8 +122,12 @@
 
                             <div class="col-md-6" :class="{ invalid: $v.bookingSummary.time.$error}">
                                 <label class="appointment" for="time">Time</label>
-                                <input type="time" id="time" class="form-control"
-                                    v-model.lazy="$v.bookingSummary.time.$model" aria-describedby="time-error">
+                                <!-- <input type="time" id="time" class="form-control"
+                                    v-model.lazy="$v.bookingSummary.time.$model" aria-describedby="time-error"> -->
+
+                                    <date-picker v-model="bookingSummary.time" lang="en" type="time" :format="'hh:mm a'"
+                                     :timePickerOptions='bookingSummary.timePickerOptions'></date-picker>
+
 
                                 <!-- validation error -->
                                 <div v-if="$v.bookingSummary.time.$error" class="error">
@@ -171,7 +171,7 @@
 import NavBar from '../components/HomePage/NavBar.vue';
 import TheFooter from '../components/HomePage/TheFooter.vue';
 import axios from 'axios'
-import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
+//import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
 import {
     required,
     minLength,
@@ -193,11 +193,26 @@ export default {
                 task: '',
                 taskDescription: '',
                 date: '',
-                time: '',
+                timePickerOptions: {
+                    start: '08:00',
+                    step:'00:30' ,
+                    end: '17:00'
+                },
+                 disabledDates: {
+                     to: new Date(Date.now() - 8640000)
+                },
+
+                // disabledDate: function(date) {
+                //  disables the date if it is a multiple of 5
+                // if(date.getDate() % 5 == 0){
+                //     return true
+                // }
+                // },
                 location: '',
                 estimatedBudget: ''
 
             }
+
         }
     },
 
@@ -248,6 +263,14 @@ export default {
 
         }
 
+    },
+    mounted() {
+        // let dateIcon = document.querySelectorAll('.mx-icon-calendar')
+        // dateIcon.style.display ='none'
+        $('.mx-icon-calendar').each(function () {
+            //console.log($(this))
+            $(this).hide();
+        })
     }
 }
 </script>
@@ -359,4 +382,36 @@ export default {
     .error {
         color: #FF6600;
     }
+
+
+    /* date picker */
+    .mx-datepicker svg {
+    width: 2em !important;
+    height: 1em;
+    vertical-align: 2em !important;
+    fill: currentColor;
+    overflow: hidden;
+    display: none !important;
+}
+
+
+.mx-datepicker {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.mx-icon-calendar, .mx-icon-clear {
+    position: absolute;
+    top: 70% !important;
+    bottom: 70% !important;
+    /* display: none; */
+    right: 8px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 16px;
+    line-height: 1;
+    color: rgba(0,0,0,.5);
+    vertical-align: middle;
+}
 </style>
