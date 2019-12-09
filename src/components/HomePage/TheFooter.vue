@@ -75,11 +75,11 @@
 
     h5 {
         font-size: 1rem;
-        line-height: 1.375;
+        line-height: 1.375rem;
         font-family: "Rubik", "Arial", "sans-serif";
         font-weight: 500;
         color: #333456 !important;
-        margin-top: 58px;
+        margin-top: 3.625rem;
     }
 
     a {
@@ -93,19 +93,19 @@
         text-decoration: none;
     }
     .services li{
-        margin-left: 40px;
+        margin-left: 2.5rem;
     }
 
     ul li {
         list-style-type: disc;
-        margin-left: 75px;
-        padding: 0px;
+        margin-left: 4.6875rem;
+        padding: 0rem;
         text-align: left;
     }
 
     li span {
         position: relative;
-        left: 30px;
+        left: 1.875rem;
     }
 
     img:hover, svg:hover{
