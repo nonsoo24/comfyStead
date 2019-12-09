@@ -286,22 +286,22 @@ export default {
         position: relative;
         /* needed for the overlay to extend when you scroll */
         /* general styles */
-        padding: 30px;
+        padding: 1.875rem;
     }
 
 
     .title {
-        padding-top: 100px;
+        padding-top: 6.25rem;
         background: #F5F5F7;
-        margin: 0px !important;
+        margin: 0rem !important;
     }
 
     .request-form,
     .request-details {
         background: #FFFFFF;
         border: 1px solid #EAEAEA;
-        box-shadow: 0px 2px 14px rgba(245, 245, 247, 0.5);
-        border-radius: 10px;
+        box-shadow: 0rem 0.125rem 0.875rem rgba(245, 245, 247, 0.5);
+        border-radius: 0.625rem ;
         width: 60%;
     }
 
@@ -314,27 +314,27 @@ export default {
     .plan-button,
     .worker-button {
         background: #FF6600;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: 600;
-        font-size: 16px !important;
+        font-size: 1rem !important;
         text-align: center;
         color: #fff !important;
-        padding: 13px 20px !important;
-        line-height: 19px;
+        padding: 0.8125rem 1.25rem !important;
+        line-height: 1.1875rem;
         border: none;
     }
 
     .worker-button {
         width: 100%;
-        font-size: 18px !important;
-        padding: 20px !important;
+        font-size: 1.125rem !important;
+        padding: 1.25rem !important;
     }
 
     input,
     textarea {
-        margin-bottom: 30px;
+        margin-bottom: 1.875rem;
         /* border: 1px solid #FF6600; */
     }
 
@@ -345,7 +345,7 @@ export default {
     .form-control:focus {
         /* border-color: #FF6600 !important; */
         box-shadow: none !important;
-        border: 1px solid #EAEAEA;
+        border: 0.0625rem solid #EAEAEA;
     }
 
     .appointment {
@@ -355,28 +355,28 @@ export default {
     .title p,
     .title h3 {
         position: relative;
-        left: 280px
+        left: 17.5rem
     }
 
     .title p {
-        padding-bottom: 125px !important;
+        padding-bottom: 7.8125rem !important;
     }
 
     .title h3 {
-        padding-top: 25px;
+        padding-top: 1.5625rem;
 
     }
 
     .request-form {
-        margin: -79px auto 40px auto !important;
+        margin: -4.9375rem auto 2.5rem auto !important;
     }
 
     /* validation error styling */
     .form-group.invalid input {
         /* background-color: #ffc9aa; */
         border: 1px solid #FF6600;
-        margin-bottom: 0px !important;
-        padding-bottom: 0px !important;
+        margin-bottom: 0rem !important;
+        padding-bottom: 0rem !important;
     }
 
     .error {
@@ -386,9 +386,9 @@ export default {
 
     /* date picker */
     .mx-datepicker svg {
-    width: 2em !important;
-    height: 1em;
-    vertical-align: 2em !important;
+    width: 2rem !important;
+    height: 1rem;
+    vertical-align: 2rem !important;
     fill: currentColor;
     overflow: hidden;
     display: none !important;
@@ -406,10 +406,10 @@ export default {
     top: 70% !important;
     bottom: 70% !important;
     /* display: none; */
-    right: 8px;
+    right: 0.5rem;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1;
     color: rgba(0,0,0,.5);
     vertical-align: middle;
