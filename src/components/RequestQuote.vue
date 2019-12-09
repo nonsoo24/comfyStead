@@ -216,103 +216,122 @@ export default {
 
 <style scoped>
 
+@font-face {
+    font-family: "avenir-next-lt-pro-regular";
+    src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("woff"),
+        url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"),
+        url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Gilroy-Bold ☞';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gilroy-Bold ☞'), url('../assets/fonts/Gilroy-Bold.woff') format('woff');
+}
+
+html{
+    font-size: 16px;
+    font-family: "avenir-next-lt-pro-regular";
+}
 
 
     .title{
-        padding-top: 100px;
+        padding-top: 6.25rem;
         background: #F5F5F7;
-        margin: 0px !important;
+        margin: 0rem !important;
     }
 
     button{
         background: #FF6600;
-        border-radius: 4px;
-        font-family: 'Poppins', sans-serif;
+        border-radius: 0.25rem;
+        font-family: "avenir-next-lt-pro-regular";
         font-style: normal;
         font-weight: 600;
-        font-size: 16px !important;
+        font-size: 1rem !important;
         text-align: center;
         color: #fff !important;
-        padding: 13px 44px !important;
-        line-height: 19px;
+        padding: 0.8125rem 2.75rem !important;
+        line-height: 1.1875rem;
         border: none;
-        margin-top: 10px;
+        margin-top: 0.625rem;
         display: visible;
     }
 
     #request-button{
-        border-radius: 4px;
-        font-family: 'Poppins', sans-serif;
-        font-style: normal;
+        border-radius: 0.25rem;
+        font-family: "avenir-next-lt-pro-regular";
         font-weight: 600;
-        font-size: 16px !important;
+        font-size: 1rem !important;
         text-align: center !important;
         color: #333456 !important;
-        padding: 10px 21px !important;
+        padding: 0.625rem 1.3125rem !important;
         border: none;
         background: #F5F5F7;
-        margin-top: 10px;
+        margin-top: 0.625rem;
         display: none;
 
     }
 
     h6{
-        font-size: 18px;
-        line-height: 22px;
+        font-size: 1.125rem;
+        line-height: 1.375rem;
         font-weight: 600;
+        font-family: "avenir-next-lt-pro-regular";
         /* float: left; */
         display: block;
     }
     .card, .call-card{
-        width: 802px !important;
+        width: 50.125rem !important;
         background: #FFFFFF !important;
-        border: 1px solid #EAEAEA !important;
-        box-shadow: 0px 2px 14px rgba(245, 245, 247, 0.5);
-        border-radius: 10px;
-        margin: auto auto 40px auto !important;
+        border: 0.0625rem solid #EAEAEA !important;
+        box-shadow: 0rem 0.125rem 0.875rem rgba(245, 245, 247, 0.5);
+        border-radius: 0.625rem;
+        margin: auto auto 2.5rem auto !important;
     }
 
     .call-card{
-        margin: -40px auto 40px auto !important;
+        margin: -2.5rem auto 2.5rem auto !important;
     }
 
     .review{
-        font-size: 16px;
+        font-size: 1rem;
         color: #333456;
     }
 
     .profession{
-         font-size: 12px !important;
+         font-size: 0.75rem !important;
          color: #333456;
-         line-height: 14px;
+         line-height: 0.875rem;
     }
     .title p, .title h3{
         position: relative;
-        left: 280px
+        left: 17.5rem
     }
 
     .title p{
-        padding-bottom: 82px;
+        padding-bottom: 5.125rem;
     }
 
     .title h3{
-        padding-top: 25px;
+        padding-top: 1.5625rem;
+        font-family: 'Gilroy-Bold ☞';
 
     }
 
 
     .finish-button{
-        border-radius: 4px;
-        font-family: 'Poppins', sans-serif;
+        border-radius: 0.25rem;
+        font-family: "avenir-next-lt-pro-regular";
         font-style: normal;
         font-weight: 600;
-        font-size: 18px !important;
+        font-size: 1.125rem !important;
         text-align: center !important;
         color: #fff !important;
-        padding: 19px 20px !important;
+        padding: 1.1875rem 1.25rem !important;
         border: none;
         background: #4CAF50;
-        box-shadow: 0px 1px 10px rgba(125, 50, 0, 0.25);
+        box-shadow: 0rem 0.0625rem 0.625rem rgba(125, 50, 0, 0.25);
         width: 60%;
         margin: auto;
     }

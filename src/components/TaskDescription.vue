@@ -277,9 +277,25 @@ export default {
 
 <style scoped>
 
+@font-face {
+    font-family: "avenir-next-lt-pro-regular";
+    src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("woff"),
+        url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"),
+        url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Gilroy-Bold ☞';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gilroy-Bold ☞'), url('../assets/fonts/Gilroy-Bold.woff') format('woff');
+}
+
     html, body {
         margin: 0;
         min-height: 100%;
+        font-size: 16px;
+        font-family: "avenir-next-lt-pro-regular";
     }
 
     body {
@@ -364,7 +380,7 @@ export default {
 
     .title h3 {
         padding-top: 1.5625rem;
-
+        font-family: 'Gilroy-Bold ☞';
     }
 
     .request-form {

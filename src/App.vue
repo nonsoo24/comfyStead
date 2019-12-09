@@ -5,6 +5,15 @@
 </template>
 
 <style>
+@font-face {
+    font-family: "avenir-next-lt-pro-regular";
+    src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("woff"),
+        url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"),
+        url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("truetype");
+}
+
+
+
 #app {
   font-family: 'avenir-next-lt-pro-regular', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
