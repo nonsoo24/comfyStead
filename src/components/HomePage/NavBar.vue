@@ -40,33 +40,33 @@ export default {
 
 <style scoped>
     nav {
-        left: 0em;
-        top: 0em;
+        left: 0rem;
+        top: 0rem;
         background-color: #FFFFFF;
-        height: 3.75em;
-        box-shadow: 0e, 0.25em 0.625em rgba(0, 0, 0, 0.25);
+        height: 3.75rem;
+        box-shadow: 0rem, 0.25rem 0.625rem rgba(0, 0, 0, 0.25);
     }
 
 
     .logo {
-        margin-left: 7.5em;
-        top: 0.75em;
-        width: 105px
+        margin-left: 7.5rem;
+        top: 0.75rem;
+        width: 6.5625rem
     }
 
 
     li {
         font-family:"avenir-next-lt-pro-regular";
-        font-size: 0.875em;
+        font-size: 0.875rem;
         font-weight: 600;
-        line-height: 1.0625em;
+        line-height: 1.0625rem;
         text-align: center;
         color: #333456;
         cursor: pointer;
     }
 
     #nav {
-        padding: 30px;
+        padding: 1.875rem;
     }
 
     #nav a {
