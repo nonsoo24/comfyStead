@@ -142,23 +142,25 @@
 
                         <!-- login with facebook -->
 
-                        <div class="m-auto">
-                            <button type="submit" class="facebook">
+
+                            <fb-signin-button class="m-auto facebook" :params="fbSignInParams" @success="onSignInSuccess"
+                                @error="onSignInError">
                                 <span>
                                     <img src="/assets/img/facebook.png" alt="facebook" class="mt-0">
-                                </span> Sign up with facebook
-                            </button>
-                        </div>
+                                </span>
+                                Sign in with Facebook
+                            </fb-signin-button>
 
                         <!-- login with google -->
 
                         <div class="m-auto">
-                            <button type="submit" class="google" @click="signUpWithGoogle">
-                                <span>
+                            <GoogleLogin class="google" :params="params" :onSuccess="onSuccess"
+                            :onFailure="onFailure">
+                             <span>
                                     <img src="../assets/img/icons/google.png" alt="google" class="mt-0">
                                 </span>
-                                Sign up with google
-                            </button>
+                            Sign up with google
+                            </GoogleLogin>
                         </div>
                     </form>
                 </div>
@@ -183,6 +185,7 @@
         integer,
         sameAs
     } from 'vuelidate/lib/validators'
+    import GoogleLogin from 'vue-google-login';
 
     import NavBar from '../components/HomePage/NavBar.vue'
     import TheFooter from '../components/HomePage/TheFooter.vue';
@@ -191,16 +194,19 @@
                 return {
                     disabled: false,
                     submitStatus: null,
-                    //loader: false,
-                    //uiState: "submit not clicked",
-                    //FormErrors: false,
-                    //formTouched: false,
-                    //empty: true,
-                    errors: {},
-                    responses: '',
-                    userData: {
-                        first_name: '',
-                        last_name: '',
+                        params: {
+                            client_id: "179987126480-jianat2fcsmctuvrh3u5919k4ad6uiug.apps.googleusercontent.com"
+                        },
+
+                        fbSignInParams: {
+                            scope: 'email,user_likes',
+                            return_scopes: true
+                        },
+                        errors: {},
+                        responses: '',
+                        userData: {
+                            first_name: '',
+                            last_name: '',
                         email: '',
                         phone_number: '',
                         password: '',
@@ -250,41 +256,48 @@
 
             components: {
                 'nav-bar': NavBar,
-                'the-footer': TheFooter
+                'the-footer': TheFooter,
+                GoogleLogin
             },
 
-            async created() {
-                    try {
-                        await this.$auth.renewTokens();
-                    } catch (e) {
-                        console.log(e);
-                    }
-                },
 
                 methods: {
 
-                    signUpWithGoogle() {
-                        this.$auth.signUpWithGoogle();
-                    },
+                        // signup with google
+                        onSuccess(googleUser) {
+                                console.log(googleUser);
 
-                    // handleLoginEvent(data) {
-                    //     this.isAuthenticated = data.loggedIn;
-                    //     this.profile = data.profile;
-                    // },
+                                // This only gets the user information: id, name, imageUrl and email
+                                console.log(googleUser.getBasicProfile());
+                            },
 
-                    verifyEmail() {
-                        this.$router.push({
-                            path: 'verifyEmail'
-                        })
-                    },
+                            onFailure() {
+
+                            },
+
+                            // signup with facebook
+                            onSignInSuccess(response) {
+                                FB.api('/me', dude => {
+                                    console.log(`Good to see you, ${dude.name}.`)
+                                })
+                            },
+                            onSignInError(error) {
+                                console.log('OH NOES', error)
+                            },
+
+                        verifyEmail() {
+                                this.$router.push({
+                                    path: 'verifyEmail'
+                                })
+                        },
 
 
-                    createUser() {
+                        createUser() {
 
-                        this.$v.$touch()
-                        if (this.$v.$invalid) {
-                            this.submitStatus = 'ERROR'
-                        } else {
+                            this.$v.$touch()
+                            if (this.$v.$invalid) {
+                                this.submitStatus = 'ERROR'
+                            } else {
                             let loader = document.querySelector('.spinner-border');
                             let buttonText = document.querySelector('.login');
                             let loginButton = document.querySelector('.login-button');
@@ -318,42 +331,6 @@
                                     console.log(error)
                                 })
                         }
-                        // function onSignIn(googleUser) {
-                        //   var id_token = googleUser.getAuthResponse().id_token;
-                        //   ...
-                        // }
-                        // var xhr = new XMLHttpRequest();
-                        //  axios.post('POST', 'https://yourbackend.example.com/tokensignin');
-                        // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                        // xhr.onload = function() {
-                        //   console.log('Signed in as: ' + xhr.responseText);
-                        // };
-                        // xhr.send('idtoken=' + id_token);
-
-                        // headers: {
-                        //                 'content-type': 'application/json',
-                        //                 'Accept': 'application/json'
-                        //             }
-                        //         })
-                        //         .then(response => {
-                        //             loginButton.classList.remove("Disabled");
-                        //             let details = response.data;
-                        //             this.responses = details.msg
-                        //             this.verifyEmail();
-                        //             console.log(this.userData)
-                        //             console.log(response)
-                        //             console.log(response.data)
-                        //             console.log("response", response.data.msg)
-                        //             console.log(this.userData)
-                        //         })
-                        //         .catch(error => {
-                        //             this.loader = false;
-                        //             this.disabled = false;
-                        //             console.log(error.response.data.errors || error.response.data.msg)
-                        //             this.errors = error.response.data.errors;
-                        //             alert(this.errors)
-                        //             console.log(error)
-                        //         })
                     }
                 }
         }
