@@ -37,7 +37,7 @@
                         </div>
 
 
-                        <div class="col-md-3 col-sm-12 col-12 p-0 float-left mb-3">
+                        <div class="col-md-4 col-sm-12 col-12 p-0 float-left mb-3">
                             <h5 class="mb-4 font-weight-bold" data-toggle="collapse" href="#igofer-support" role="button"
                         aria-expanded="false" aria-controls="igofer-support">Support <i class="ti-angle-down"></i></h5>
 
@@ -54,11 +54,11 @@
 
 
 
-                        <div class="col-md-3 col-sm-12 col-12 p-0 mb-3 float-left">
+                        <div class="col-md-5 col-sm-12 col-12 p-0 mb-3 float-left">
                             <h5 class="mb-4 m font-weight-bold download">Download the app</h5>
-                            <div class="d-flex flex-row">
-                                <img src="../../assets/img/icons/playstore.svg" alt="playstore" class="pr-2" >
-                                <img src="../../assets/img/icons/ios-store.svg" alt="iOs-store" class="d-md-block">
+                            <div class="d-flex flex-row flex-wrap">
+                                <img src="../../assets/img/icons/playstore.svg" alt="playstore" class="pr-2 google-playstore" >
+                                <img src="../../assets/img/icons/ios-store.svg" alt="iOs-store" class="iOs-store pt-2">
                             </div>
 
                         </div>
@@ -265,14 +265,14 @@ svg:hover {
 
     ul li {
         list-style-type: disc;
-        margin-left: 1.5rem;
+        margin-left: 3.1rem;
         padding: 0rem;
         text-align: left;
     }
 
     li span {
         position: relative;
-        left: 1.875rem;
+        left: 0.2rem;
     }
 
     .services li {
@@ -287,6 +287,11 @@ svg:hover {
         float: right;
         display: none;
     }
+    /* .iOs-store, .google-playstore{
+        width: 160px;
+        height: 45px;
+
+    } */
 
 }
 
