@@ -10,13 +10,15 @@ import axios from 'axios'
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
 import GoogleLogin from 'vue-google-login';
-import FBSignInButton from 'vue-facebook-signin-button'
+//import FBSignInButton from 'vue-facebook-signin-button'
+import facebookLogin from 'facebook-login-vuejs';
 
 
 Vue.use(Vuelidate);
 Vue.use(DatePicker)
 Vue.use(GoogleLogin)
-Vue.use(FBSignInButton)
+//Vue.use(FBSignInButton)
+Vue.use(facebookLogin)
 //Vue.use(VueCtkDateTimePicker);
 Vue.config.productionTip = false
 

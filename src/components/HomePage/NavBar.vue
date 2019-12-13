@@ -48,11 +48,6 @@ export default {
     }
 
 
-    .logo {
-        margin-left: 7.5rem;
-        top: 0.75rem;
-        width: 6.5625rem
-    }
 
 
     li {
@@ -77,5 +72,40 @@ export default {
     #nav a.router-link-exact-active {
         color: #42b983;
     }
+
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  
+    .logo {
+        margin-left: 1.75rem;
+        top: 0.5rem;
+        width: 6.5625rem
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+     .logo {
+        margin-left: 1.75rem;
+        top: 0.5rem;
+        width: 6.5625rem
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .logo {
+        margin-left: 7.5rem;
+        top: 0.75rem;
+        width: 6.5625rem
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+}
 
     </style>

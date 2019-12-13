@@ -104,9 +104,9 @@ input {
 
 }
 
-.facebook {
+.facebook button {
     cursor: pointer;
-    background: #3558D4 !important;
+    background-image: #3558D4 !important;
     border-radius: 0.25rem;
     border: 0.0625rem solid #3558D4;
     width: 21.9375rem;
@@ -130,6 +130,8 @@ input {
     margin: 1.5625rem 0rem 1.5625rem 0rem !important;
     border: 0.0625rem solid #C4C4C4 !important;
 }
+
+
 
 .option {
     margin: 1.5625rem 0rem 1.5625rem 0rem

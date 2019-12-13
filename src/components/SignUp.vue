@@ -130,38 +130,43 @@
                             Privacy and Policy.</p>
 
                             <!-- login button -->
-                            <button class="login-button"  @click.prevent="createUser()">
+                            <button class="login-button" @click.prevent="createUser()">
                                 <span class="spinner-border m-auto" role="status" aria-hidden="true"></span>
                                 <span class="login">Create Account</span>
                             </button>
-                        <!-- <button type="submit" class="create-account-button" @click.prevent="createUser"></button> -->
+                            <!-- <button type="submit" class="create-account-button" @click.prevent="createUser"></button> -->
 
 
-                        <p class="option">OR</p>
+                            <p class="option">OR</p>
 
 
-                        <!-- login with facebook -->
+                            <!-- login with facebook -->
 
 
-                            <fb-signin-button class="m-auto facebook" :params="fbSignInParams" @success="onSignInSuccess"
+                            <!-- <fb-signin-button class="m-auto facebook" :params="fbSignInParams" @success="onSignInSuccess"
                                 @error="onSignInError">
                                 <span>
                                     <img src="/assets/img/facebook.png" alt="facebook" class="mt-0">
                                 </span>
                                 Sign in with Facebook
-                            </fb-signin-button>
+                            </fb-signin-button> -->
 
-                        <!-- login with google -->
+                            <facebook-login class="button facebook" appId="2599236150111998"
+                            @login="onLogin" @logout="onLogout"
+                            @sdk-loaded="sdkLoaded">
+                            </facebook-login>
 
-                        <div class="m-auto">
-                            <GoogleLogin class="google" :params="params" :onSuccess="onSuccess"
-                            :onFailure="onFailure">
-                             <span>
-                                    <img src="../assets/img/icons/google.png" alt="google" class="mt-0">
-                                </span>
-                            Sign up with google
-                            </GoogleLogin>
-                        </div>
+                            <!-- login with google -->
+
+                            <div class="m-auto">
+                                <GoogleLogin class="google" :params="params" :onSuccess="onSuccess"
+                                    :onFailure="onFailure">
+                                    <span>
+                                        <img src="../assets/img/icons/google.png" alt="google" class="mt-0">
+                                    </span>
+                                    Sign up with google
+                                </GoogleLogin>
+                            </div>
                     </form>
                 </div>
             </div>
@@ -186,154 +191,188 @@
         sameAs
     } from 'vuelidate/lib/validators'
     import GoogleLogin from 'vue-google-login';
-
+    import facebookLogin from 'facebook-login-vuejs';
     import NavBar from '../components/HomePage/NavBar.vue'
     import TheFooter from '../components/HomePage/TheFooter.vue';
     export default {
         data() {
-                return {
-                    disabled: false,
-                    submitStatus: null,
-                        params: {
-                            client_id: "179987126480-jianat2fcsmctuvrh3u5919k4ad6uiug.apps.googleusercontent.com"
-                        },
-
-                        fbSignInParams: {
-                            scope: 'email,user_likes',
-                            return_scopes: true
-                        },
-                        errors: {},
-                        responses: '',
-                        userData: {
-                            first_name: '',
-                            last_name: '',
+            return {
+                disabled: false,
+                submitStatus: null,
+                params: {
+                    client_id: "179987126480-jianat2fcsmctuvrh3u5919k4ad6uiug.apps.googleusercontent.com"
+                },
+                //facebook
+                    //   idImage, loginImage, mailImage, faceImage,
+                        isConnected: false,
+                        name: '',
                         email: '',
-                        phone_number: '',
-                        password: '',
-                        confirm_password: '',
-                        // termsAndCondition: false,
-                    }
-                }
-            },
-            validations: {
+                        personalID: '',
+                        FB: undefined,
+
+                errors: {},
+                responses: '',
                 userData: {
-                    email: {
-                        required,
-                        email
-                    },
-
-                    first_name: {
-                        required,
-                        minLength: minLength(3)
-                    },
-                    last_name: {
-                        required,
-                        minLength: minLength(3)
-                    },
-                    phone_number: {
-                        required,
-                        integer,
-                        numeric,
-                        validPhoneNumber(phone_number) {
-                            return /^[0]\d{10}$/.test(phone_number)
-                        }
-                        // minLength: minLength(11)
-                    },
-                    password: {
-                        required,
-                        strongPassword(password) {
-                            return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(password)
-
-                        }
-                    },
-                    confirm_password: {
-                        required,
-                        sameAsPassword: sameAs('password')
-                    }
+                    first_name: '',
+                    last_name: '',
+                    email: '',
+                    phone_number: '',
+                    password: '',
+                    confirm_password: '',
+                    // termsAndCondition: false,
                 }
+            }
+        },
+        validations: {
+            userData: {
+                email: {
+                    required,
+                    email
+                },
+
+                first_name: {
+                    required,
+                    minLength: minLength(3)
+                },
+                last_name: {
+                    required,
+                    minLength: minLength(3)
+                },
+                phone_number: {
+                    required,
+                    integer,
+                    numeric,
+                    validPhoneNumber(phone_number) {
+                        return /^[0]\d{10}$/.test(phone_number)
+                    }
+                    // minLength: minLength(11)
+                },
+                password: {
+                    required,
+                    strongPassword(password) {
+                        return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(password)
+
+                    }
+                },
+                confirm_password: {
+                    required,
+                    sameAsPassword: sameAs('password')
+                }
+            }
+
+        },
+
+         computed: {
+    getButtonText() {
+      switch (this.isConnected) {
+        case true:
+          return this.logoutLabel
+        case false:
+          return this.loginLabel
+        default:
+          return 'this is default'
+      }
+    }
+  },
+        components: {
+            'nav-bar': NavBar,
+            'the-footer': TheFooter,
+            GoogleLogin,
+            facebookLogin
+        },
+
+
+        methods: {
+
+            // signup with google
+            onSuccess(googleUser) {
+                console.log(googleUser);
+
+                // This only gets the user information: id, name, imageUrl and email
+                console.log(googleUser.getBasicProfile());
+            },
+
+            onFailure() {
 
             },
 
-            components: {
-                'nav-bar': NavBar,
-                'the-footer': TheFooter,
-                GoogleLogin
+            // signup with facebook
+            getUserData() {
+                this.FB.api('/me', 'GET', {
+                        fields: 'id,name,email'
+                    },
+                    userInformation => {
+                        console.warn("data api", userInformation)
+                        this.personalID = userInformation.id;
+                        this.email = userInformation.email;
+                        this.name = userInformation.name;
+                    }
+                )
+            },
+            sdkLoaded(payload) {
+                this.isConnected = payload.isConnected
+                this.FB = payload.FB
+                if (this.isConnected) this.getUserData()
+            },
+            onLogin() {
+                this.isConnected = true
+                this.getUserData()
+            },
+            onLogout() {
+                this.isConnected = false;
             },
 
 
-                methods: {
-
-                        // signup with google
-                        onSuccess(googleUser) {
-                                console.log(googleUser);
-
-                                // This only gets the user information: id, name, imageUrl and email
-                                console.log(googleUser.getBasicProfile());
-                            },
-
-                            onFailure() {
-
-                            },
-
-                            // signup with facebook
-                            onSignInSuccess(response) {
-                                FB.api('/me', dude => {
-                                    console.log(`Good to see you, ${dude.name}.`)
-                                })
-                            },
-                            onSignInError(error) {
-                                console.log('OH NOES', error)
-                            },
-
-                        verifyEmail() {
-                                this.$router.push({
-                                    path: 'verifyEmail'
-                                })
-                        },
+            // route to new verify email page
+            verifyEmail() {
+                this.$router.push({
+                    path: 'verifyEmail'
+                })
+            },
 
 
-                        createUser() {
+            createUser() {
 
-                            this.$v.$touch()
-                            if (this.$v.$invalid) {
-                                this.submitStatus = 'ERROR'
-                            } else {
-                            let loader = document.querySelector('.spinner-border');
-                            let buttonText = document.querySelector('.login');
-                            let loginButton = document.querySelector('.login-button');
-                            loader.style.display = 'block'
-                            buttonText.style.display = 'none'
-                            loginButton.classList.add("Disabled");
-                            // alert("hello world")
-                            axios.post("/users/register", this.userData, {
-                                    headers: {
-                                        'content-type': 'application/json',
-                                        'Accept': 'application/json'
-                                    }
-                                })
-                                .then(response => {
-                                    loginButton.classList.remove("Disabled");
-                                    let details = response.data;
-                                    this.responses = details.msg
-                                    this.verifyEmail();
-                                    console.log(this.userData)
-                                    console.log(response)
-                                    console.log(response.data)
-                                    console.log("response", response.data.msg)
-                                    console.log(this.userData)
-                                })
-                                .catch(error => {
-                                    this.loader = false;
-                                    this.disabled = false;
-                                    console.log(error.response.data.errors || error.response.data.msg)
-                                    this.errors = error.response.data.errors;
-                                    alert(this.errors)
-                                    console.log(error)
-                                })
-                        }
-                    }
+                this.$v.$touch()
+                if (this.$v.$invalid) {
+                    this.submitStatus = 'ERROR'
+                } else {
+                    let loader = document.querySelector('.spinner-border');
+                    let buttonText = document.querySelector('.login');
+                    let loginButton = document.querySelector('.login-button');
+                    loader.style.display = 'block'
+                    buttonText.style.display = 'none'
+                    loginButton.classList.add("Disabled");
+                    // alert("hello world")
+                    axios.post("/users/register", this.userData, {
+                            headers: {
+                                'content-type': 'application/json',
+                                'Accept': 'application/json'
+                            }
+                        })
+                        .then(response => {
+                            loginButton.classList.remove("Disabled");
+                            let details = response.data;
+                            this.responses = details.msg
+                            this.verifyEmail();
+                            console.log(this.userData)
+                            console.log(response)
+                            console.log(response.data)
+                            console.log("response", response.data.msg)
+                            console.log(this.userData)
+                        })
+                        .catch(error => {
+                            this.loader = false;
+                            this.disabled = false;
+                            console.log(error.response.data.errors || error.response.data.msg)
+                            this.errors = error.response.data.errors;
+                            alert(this.errors)
+                            console.log(error)
+                        })
                 }
+            }
         }
+    }
 </script>
 
 

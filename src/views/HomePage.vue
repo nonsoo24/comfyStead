@@ -6,8 +6,8 @@
         <!-- landing page picture -->
         <section landing-content>
             <div class="landing-picture">
-                <h2 banner-text>A convenient and affordable <br> way to get things done</h2>
-                <p class="word pb-5">Choose from a pool of iGofer trained and verified professionals <br> to get your
+                <h2 banner-text>A convenient and affordable way to get things done</h2>
+                <p class="word">Choose from a pool of iGofer trained and verified professionals to get your
                     job done.
                 </p>
             </div>
@@ -169,12 +169,12 @@
                             :class="{ active: isActive('plumbering') }" href="#plumbering">Plumbering</a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item d-none d-sm-block">
                         <a class="nav-link" @click.prevent="setActive('painting')"
                             :class="{ active: isActive('painting') }" href="#painting">Painting</a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item d-none d-sm-block">
                         <a class="nav-link" @click.prevent="setActive('fumigation')"
                             :class="{ active: isActive('fumigation') }" href="#fumigation">Fumigation</a>
                     </li>
@@ -195,9 +195,9 @@
 
                         <div class="cleaning">
                             <div class="text-left pt-4 pl-5 container">
-                                <img class="pb-2" src="assets/img/icons/cleaning.png" alt="cleaning-image">
+                                <img class="pb-2 d-none d-sm-block" src="assets/img/icons/cleaning.png" alt="cleaning-image">
                                 <p class="text-left text-light">
-                                    For all your cleaning services you have in mind <br> and some you haven't thought of yet.
+                                    For all your cleaning services you have in mind and some you haven't thought of yet.
                                 </p>
                             </div>
 
@@ -212,7 +212,7 @@
 
                         <div class="row mt-3 services-types">
 
-                             <div v-for="(service, i) in services" :key="i" class="col-md-3">
+                             <div v-for="(service, i) in services" :key="i" class="col-md-3 col-3">
                                 <img :src="service.image" :alt="service.alt" @click="TaskDescription">
                                 <h5 class="text-left mb-0 mt-1 font-weight-bolder">{{service.title}}</h5>
                                 <p class="text-left">{{service.total}} professionals</p>
@@ -246,8 +246,8 @@
         <section class="container mt-5">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="text-left customer">Our customers love what <br> we do.</p>
-                    <p class="text-left customer-word">Over 200 people use iGofer for their handyman services <br> and
+                    <p class="text-left customer">Our customers love what we do.</p>
+                    <p class="text-left customer-word">Over 200 people use iGofer for their handyman services and
                         make their lives easier and better </p>
                 </div>
 
@@ -310,11 +310,11 @@
                 <img src="../assets/img/icons/ios-store.svg" class="mt-4" alt="iOs-store">
 
                 <div class="container row mt-4 content">
-                    <div class="col-sm-3  col-xs-3 col-md-6">
+                    <div class="col-sm-3  col-xs-3 col-md-4">
                         <img src="../assets/img/icons/phone.svg" alt="phone" class="phone">
                     </div>
 
-                    <div class="col-sm-9 col-xs-3 col-md-6">
+                    <div class="col-sm-9 d-none d-sm-block col-xs-3 col-md-8">
                         <p class="download-app pt-5">Download the iGofer app</p>
                         <ul class="app-features">
                             <li> <span>Book and mange appointments</span> </li>
@@ -330,13 +330,13 @@
         <!-- become an igofer worker -->
         <section>
             <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <img class="become-worker" src="/assets/img/homepage/becomeworker.svg" alt="become a worker">
+                <div class="d-none d-sm-block d-md-none d-lg-block col-md-12 col-xl-6 col-sm-12">
+                    <img class="become-worker-img" src="/assets/img/homepage/becomeworker.svg" alt="become a worker">
                 </div>
-                <div class="col-md-6 col-sm-12">
-                    <h4 class="text-left become-worker">Join the pool of professional <br> iGofer workers</h4>
+                <div class="col-md-12 col-xl-6 col-sm-12">
+                    <h4 class="text-left become-worker">Join the pool of professional iGofer workers</h4>
                     <p class="text-left">Whatever work you do, we'll find you the jobs your want.</p>
-                    <button class="btn">Become an iGofer worker</button>
+                    <button class="worker-button">Become an iGofer worker</button>
                 </div>
             </div>
         </section>
