@@ -779,8 +779,9 @@ li span {
     }
 
     .services-types img {
-        width: 16.25rem;
+        width: 14rem;
         height: 12.125rem;
+        padding-right: 3.5rem;
     }
 
     .cleaning {
@@ -922,6 +923,14 @@ li span {
         background: url('/assets/img/services/cleaning.svg');
         height: 15.625rem;
         border-radius: 3px;
+    }
+
+    .app-features>li {
+        list-style-type: none;
+        list-style-image: url(/assets/img/checkmark.png);
+        margin-left: 18rem;
+        padding: 0rem;
+        text-align: left;
     }
 
 }

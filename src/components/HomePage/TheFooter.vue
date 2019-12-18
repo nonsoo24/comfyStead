@@ -56,9 +56,9 @@
 
                         <div class="col-md-5 col-sm-12 col-12 p-0 mb-3 float-left">
                             <h5 class="mb-4 m font-weight-bold download">Download the app</h5>
-                            <div class="d-flex flex-row flex-wrap">
+                            <div class="d-flex flex-row">
                                 <img src="../../assets/img/icons/playstore.svg" alt="playstore" class="pr-2 google-playstore" >
-                                <img src="../../assets/img/icons/ios-store.svg" alt="iOs-store" class="iOs-store pt-2">
+                                <img src="../../assets/img/icons/ios-store.svg" alt="iOs-store" class="iOs-store">
                             </div>
 
                         </div>
@@ -322,7 +322,7 @@ svg:hover {
 
     li span {
         position: relative;
-        left: 1.875rem;
+        left: 3.875rem;
     }
 
     .services li {
@@ -388,10 +388,10 @@ svg:hover {
 
 
 
-.ti-angle-down.active {
+/* .ti-angle-down.active {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     transform: rotate(180deg);
-}
+} */
 
 </style>
