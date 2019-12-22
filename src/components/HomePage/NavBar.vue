@@ -76,7 +76,7 @@ export default {
 
     /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  
+
     .logo {
         margin-left: 1.75rem;
         top: 0.5rem;
@@ -87,9 +87,16 @@ export default {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
      .logo {
-        margin-left: 1.75rem;
+        margin-left: 0rem;
         top: 0.5rem;
-        width: 6.5625rem
+        width: 6.5625rem;
+    }
+    .navbar-collapse{
+        background-color: #FFFFFF;
+    }
+
+    .navbar-nav{
+        padding-right: 0rem !important;
     }
 
 }

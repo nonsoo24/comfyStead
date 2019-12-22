@@ -554,8 +554,12 @@ li span {
     }
 
     .services-types img {
-        width: 10.625rem;
-        height:  6.924375rem;
+        width: 5rem;
+        height:  6rem;
+    }
+
+    .col-md-3{
+        flex-wrap: wrap;
     }
 
     .cleaning {
@@ -565,6 +569,13 @@ li span {
         border-radius: 3px;
     }
 
+    h5{
+        font-size: 0.9rem;
+        margin-top: 0px !important;
+    }
+    .services-types p {
+        font-size: 0.6rem;
+    }
 
 
 }
@@ -764,7 +775,7 @@ li span {
 
     .nav-tabs {
         border: none;
-        width: 61%;
+        width: 96%;
         margin-left: -0.9375rem;
     }
 

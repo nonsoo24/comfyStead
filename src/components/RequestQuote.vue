@@ -45,36 +45,36 @@
 
                                 <p class="profession">
                                     <span>
-                                    <svg width="100" height="15" viewBox="0 0 100 15" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M8 0L10.2804 4.86123L15.6085 5.52786L11.6898 9.1989L12.7023 14.4721L8 11.8797L3.29772 14.4721L4.31016 9.1989L0.391548 5.52786L5.71955 4.86123L8 0Z"
-                                            fill="#FFC107" />
-                                        <path
-                                            d="M29 0L31.2804 4.86123L36.6085 5.52786L32.6898 9.1989L33.7023 14.4721L29 11.8797L24.2977 14.4721L25.3102 9.1989L21.3915 5.52786L26.7196 4.86123L29 0Z"
-                                            fill="#FFC107" />
-                                        <path
-                                            d="M50 0L52.2804 4.86123L57.6085 5.52786L53.6898 9.1989L54.7023 14.4721L50 11.8797L45.2977 14.4721L46.3102 9.1989L42.3915 5.52786L47.7196 4.86123L50 0Z"
-                                            fill="#FFC107" />
-                                        <path
-                                            d="M71 0L73.2804 4.86123L78.6085 5.52786L74.6898 9.1989L75.7023 14.4721L71 11.8797L66.2977 14.4721L67.3102 9.1989L63.3915 5.52786L68.7196 4.86123L71 0Z"
-                                            fill="#FFC107" />
-                                        <path
-                                            d="M92 0L94.2804 4.86123L99.6085 5.52786L95.6898 9.1989L96.7023 14.4721L92 11.8797L87.2977 14.4721L88.3102 9.1989L84.3915 5.52786L89.7196 4.86123L92 0Z"
-                                            fill="#EAEAEA" />
-                                    </svg>
-                                </span>
-                                {{review.reviewPercentage}}% Positive Reviews | {{review.taskCompleted}} tasks</p>
+                                        <svg width="100" height="15" viewBox="0 0 100 15" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8 0L10.2804 4.86123L15.6085 5.52786L11.6898 9.1989L12.7023 14.4721L8 11.8797L3.29772 14.4721L4.31016 9.1989L0.391548 5.52786L5.71955 4.86123L8 0Z"
+                                                fill="#FFC107" />
+                                            <path
+                                                d="M29 0L31.2804 4.86123L36.6085 5.52786L32.6898 9.1989L33.7023 14.4721L29 11.8797L24.2977 14.4721L25.3102 9.1989L21.3915 5.52786L26.7196 4.86123L29 0Z"
+                                                fill="#FFC107" />
+                                            <path
+                                                d="M50 0L52.2804 4.86123L57.6085 5.52786L53.6898 9.1989L54.7023 14.4721L50 11.8797L45.2977 14.4721L46.3102 9.1989L42.3915 5.52786L47.7196 4.86123L50 0Z"
+                                                fill="#FFC107" />
+                                            <path
+                                                d="M71 0L73.2804 4.86123L78.6085 5.52786L74.6898 9.1989L75.7023 14.4721L71 11.8797L66.2977 14.4721L67.3102 9.1989L63.3915 5.52786L68.7196 4.86123L71 0Z"
+                                                fill="#FFC107" />
+                                            <path
+                                                d="M92 0L94.2804 4.86123L99.6085 5.52786L95.6898 9.1989L96.7023 14.4721L92 11.8797L87.2977 14.4721L88.3102 9.1989L84.3915 5.52786L89.7196 4.86123L92 0Z"
+                                                fill="#EAEAEA" />
+                                        </svg>
+                                    </span>
+                                    {{review.reviewPercentage}}% Positive Reviews | {{review.taskCompleted}} tasks</p>
                             </div>
 
                         </div>
                         <div>
-                            <button id ="quote-button" @click="requestQuote()">Request Quote</button>
-                             <button id ="request-button">
-                                 <span>
-                                     <img src="../assets/img/icons/checkmark.png" alt="checkmark" class="m-2">
-                                 </span>
-                                 Quote requested
+                            <button id="quote-button" @click="requestQuote()">Request Quote</button>
+                            <button id="request-button">
+                                <span>
+                                    <img src="../assets/img/icons/checkmark.png" alt="checkmark" class="m-2">
+                                </span>
+                                Quote requested
                             </button>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-             <button class=" d-block text-left btn finish-button" id ="finish-button"> Finish </button>
+            <button class=" d-block text-left btn finish-button" id="finish-button"> Finish </button>
 
 
             <!-- <div class="card m-auto">
