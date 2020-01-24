@@ -223,7 +223,7 @@ export default {
             },
             taskDescription: {
                 required,
-                minLength: minLength(15)
+                minLength: minLength(10)
             },
             date: {
                 required

@@ -117,7 +117,7 @@
 
         methods: {
 
-            dashboard() {
+            userDashboard() {
                 this.$router.push({
                     path: 'customer'
                 })
@@ -146,8 +146,9 @@
                             //if (details.status = true) {
                                 localStorage.setItem('token', JSON.stringify(details.token))
                            // }
-                            console.log(details)
-                            //this.dashboard();
+                           
+                            //console.log(details)
+                            this.userDashboard();
                         })
                         .catch(function (error) {
                             //debugger

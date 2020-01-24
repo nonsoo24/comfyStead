@@ -2,6 +2,7 @@
     <div>
         <header class="fixed-top">
             <nav class="navbar navbar-expand-lg navbar-light">
+                 <a href="javascript:void(0)" class="closebtn">&times;</a>
                 <!-- logo -->
                 <router-link to="/">
                  <img class="logo" src="/assets/img/logo.svg" alt="logo">
@@ -34,6 +35,36 @@
 <script>
 
 export default {
+    data() {
+        return {
+            isClose: false
+        }
+    },
+    methods: {
+        // openNav() {
+        //     let sideNav = document.getElementById("header").style.width = "250px";
+        //     document.getElementById("main").style.marginLeft = "250px";
+        //     sideNav.classList.add("menu");
+        // },
+
+        closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        },
+
+        openNav(x) {
+            if (x.matches) { // If media query matches
+                document.body.style.backgroundColor = "yellow";
+            } else {
+                document.body.style.backgroundColor = "pink";
+        }
+    }
+    }
+
+        // let x = window.matchMedia("(max-width: 700px)")
+        // myFunction(x) // Call listener function at run time
+        // x.addListener(myFunction) // Attach listener function on state changes
+           // },
 
 }
 </script>
@@ -46,8 +77,6 @@ export default {
         height: 3.75rem;
         box-shadow: 0rem, 0.25rem 0.625rem rgba(0, 0, 0, 0.25);
     }
-
-
 
 
     li {
@@ -74,6 +103,53 @@ export default {
     }
 
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+     .navbar-nav {
+        background-color: #fff !important;
+    }
+
+    .position-right {
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow-y: auto;
+    width: 16em;
+    -webkit-transform: translateX(16em);
+    transform: translateX(16em);
+
+}
+
+.position-right.is-transition-push {
+    box-shadow: 0 0 1px 2px #E2E2E2;
+}
+.off-canvas.is-open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.position-right {
+    background-color: white;
+    padding: 0 1em;
+}
+
+.off-canvas.is-transition-push {
+    z-index: 12;
+}
+
+.off-canvas {
+    position: fixed;
+    z-index: 12;
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: #e6e6e6;
+}
+
+
+}
     /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
@@ -82,6 +158,43 @@ export default {
         top: 0.5rem;
         width: 6.5625rem
     }
+    .navbar-nav {
+        background-color: #fff !important;
+    }
+    .menu {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .menu a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181 !important;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .menu a:hover {
+        color: #f1f1f1;
+      }
+
+      .menu .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -99,6 +212,15 @@ export default {
         padding-right: 0rem !important;
     }
 
+     .navbar {
+    height: 50px;
+    width: 100%;
+  }
+
+  .nav-link {
+    display: inline-block;
+  }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -108,11 +230,19 @@ export default {
         top: 0.75rem;
         width: 6.5625rem
     }
+
+     .navbar {
+    height: 50px;
+    width: 100%;
+  }
+
+  .nav-link {
+    display: inline-block;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   
 }
-
-    </style>
+</style>

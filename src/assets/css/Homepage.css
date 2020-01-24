@@ -435,7 +435,7 @@ li span {
         font-family: "avenir-next-lt-pro-regular";
         font-size: 1.125rem !important;
         line-height: 1.5rem;
-        margin-left: 1.75rem;
+        margin: 1.875rem 0rem 0rem 1.75rem !important;
         color: #FFFFFF;
         text-align: left;
         font-weight: normal !important;
@@ -578,6 +578,7 @@ li span {
     }
 
 
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -677,6 +678,7 @@ li span {
         height: 15.625rem;
         border-radius: 3px;
     }
+
 
 }
 
