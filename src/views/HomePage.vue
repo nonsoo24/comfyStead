@@ -133,28 +133,6 @@
         <!-- services -->
         <section>
             <div id="exTab1" class="container">
-                <!-- <ul class="nav nav-pills mb-4">
-                    <li class="active">
-                        <a href="#1a" data-toggle="tab">Cleaning</a>
-                    </li>
-                    <li>
-                        <a href="#2a" data-toggle="tab">Carpentry</a>
-                    </li>
-                    <li>
-                        <a href="#3a" data-toggle="tab">Plumbering</a>
-                    </li>
-                    <li>
-                        <a href="#4a" data-toggle="tab">Painting</a>
-                    </li>
-                    <li>
-                        <a href="#5a" data-toggle="tab">Fumigation</a>
-                    </li>
-                    <li>
-                        <a href="#6a" data-toggle="tab">more <span><img src="assets/img/icons/arrow.png"
-                                    alt="arrow"></span></a>
-                    </li>
-                </ul> -->
-
                 <ul class="nav nav-tabs nav-justified">
                     <li class="nav-item">
                         <a class="nav-link" @click.prevent="setActive('cleaning')"
@@ -212,8 +190,8 @@
 
                         <div class="row mt-3 services-types">
 
-                             <div v-for="(service, i) in services" :key="i" class="col-md-3 col-3">
-                                <img :src="service.image" :alt="service.alt" @click="TaskDescription">
+                             <div v-for="(service, i) in services" :key="i" class="col-md-3 col-3" @click="TaskDescription">
+                                <img :src="service.image" :alt="service.alt">
                                 <h5 class="text-left mb-0 mt-1 font-weight-bolder">{{service.title}}</h5>
                                 <p class="text-left">{{service.total}} professionals</p>
                             </div>
