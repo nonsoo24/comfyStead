@@ -1,23 +1,23 @@
 <template>
-        <nav id="mySidenav" class="sidenav">
-            <a href="#">Services</a>
-            <a href="#">Store</a>
-            <a href="#">Join as a pro</a>
-            <a href="#">Sign up</a>
-            <a href="#">Log In</a>
-        </nav>
+    <nav id="mySidenav" class="sidenav">
+        <ul>
+        <router-link id="sign-in" class="nav-link" to="/services" tag="li" active-class="active" exact>
+            Services</router-link>
+        <router-link id="sti" class="nav-link" to="/store" tag="li" active-class="active">Store</router-link>
+        <router-link id="join" class="nav-link" to="/join" tag="li" active-class="active">Join as a pro
+        </router-link>
+        <router-link id="sign-up" class="nav-link" to="/signup" tag="li" active-class="active">Sign up
+        </router-link>
+        <router-link id="login" class="nav-link" to="/login" tag="li" active-class="active">Log In
+        </router-link>
+        </ul>
+    </nav>
 </template>
 
 <script>
 export default {
     data() {
         return {
-            methods: {
-                // closeNav() {
-                //     document.getElementById("mySidenav").style.width = "0";
-                //     document.getElementById("main").style.marginRight = "0";
-                // },
-            }
         }
     }
 }
@@ -37,8 +37,7 @@ export default {
   padding-top: 73px;
 }
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
+.sidenav li {
   text-decoration: none !important;
   font-size: 1.5rem;
   /* color: #818181; */
@@ -48,8 +47,9 @@ export default {
   text-align: left;
 }
 
-.sidenav a:hover {
+.sidenav li:hover {
   color: #000;
+  cursor: pointer;
 }
 
 </style>
