@@ -9,11 +9,6 @@
                     <img class="logo" src="/assets/img/logo.svg" alt="logo">
                 </router-link>
 
-                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button> -->
-
                 <!-- menu -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
@@ -34,8 +29,14 @@
                     </ul>
                 </div>
 
-                 <!-- hamburger icon -->
-                <a href="" class="d-md-none d-lg-none"> <img src="../../assets/img/icons/hamburger-preview.png" alt="hamburger" id="hambuger"></a>
+                <!-- hamburger icon -->
+                <a href="javascript:void(0)" class="d-md-none d-lg-none" @click="toggle()"> <img
+                        src="../../assets/img/icons/hamburger-preview.png" alt="hamburger" id="hambuger">
+                </a>
+
+                <!-- close button -->
+                <a href="javascript:void(0)" class="closebtn" @click="toggle()">&times;
+                </a>
             </nav>
         </header>
     </div>
@@ -46,30 +47,28 @@
 export default {
     data() {
         return {
-            isClose: false
+            isClose: true
         }
-        },
-        methods: {
-                // toggle(e) {
-                //     var width = screen.width;
-                //     console.log(width)
-                //     if (width <= 767) {
-                //         document.getElementById('hambuger').style.display = 'none';
+    },
 
-                //     }
-                //     else {
-                //         document.getElementById('hambuger').style.display = 'block';
-                //     }
-                // }
-        },
-
-        // created() {
-        //         window.addEventListener("resize", this.toggle);
-        // },
-        // destroyed() {
-        // window.removeEventListener("resize", this.toggle);
-        // }
+    methods: {
+        toggle() {
+            let sideBar = document.getElementById("mySidenav");
+            let closeBtn = document.querySelector(".closebtn");
+            let hambuger = document.querySelector("#hambuger");
+            if (this.isClose){
+                sideBar.classList.add("is-open");
+                closeBtn.style.display = "block"
+                hambuger.style.display = "none"
+            } else {
+                sideBar.classList.remove("is-open");
+                closeBtn.style.display = "none"
+                hambuger.style.display = "block"
+            }
+            this.isClose = !this.isClose
+        }
     }
+}
 
 
 
@@ -107,13 +106,19 @@ export default {
     #hambuger{
         width: 40px;
         height: 40px;
-        /* display: none */
     }
 
     #nav a.router-link-exact-active {
         color: #42b983;
     }
-
+    .closebtn{
+        font-size: 3rem;
+        display: none;
+        color: #000;
+        position: absolute;
+        right: 20px;
+        text-decoration: none
+    }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
