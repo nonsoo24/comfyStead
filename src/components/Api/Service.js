@@ -89,28 +89,28 @@ export const cleaningSubServices = [
         {
             title: 'House Cleaning',
             total: 20,
-            image: require('../../assets/img/services/housecleaning.svg'),
+            image: require('../../assets/img/services/housecleaning.webp'),
             alt: 'Cleaning'
         },
 
         {
             title: 'Laundry',
             total: 20,
-            image: require('../../assets/img/services/laundry.svg'),
+            image: require('../../assets/img/services/laundry.webp'),
             alt: 'Laundry'
         },
 
         {
             title: 'Waste Disposal',
             total: 20,
-            image: require('../../assets/img/services/waste.svg'),
+            image: require('../../assets/img/services/waste.webp'),
             alt: 'Waste Disposal'
         },
 
         {
             title: 'Office Cleaning',
             total: 20,
-            image: require('../../assets/img/services/officecleaning.svg'),
+            image: require('../../assets/img/services/officecleaning.webp'),
             alt: 'Office Cleaning'
         }
 

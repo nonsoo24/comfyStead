@@ -32,6 +32,7 @@ export default {
   top: 0;
   right: 0;
   background-color: #fff;
+  box-shadow: 0 0 1px 2px #E2E2E2;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 73px;
@@ -39,7 +40,7 @@ export default {
 
 .sidenav li {
   text-decoration: none !important;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   /* color: #818181; */
   color: rgba(0,0,0,.5);
   display: block;

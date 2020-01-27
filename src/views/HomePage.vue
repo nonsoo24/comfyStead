@@ -300,11 +300,11 @@
                     <img src="../assets/img/icons/ios-store.svg" class="mt-4" alt="iOs-store">
 
                     <div class="container row mt-4 content">
-                        <div class="col-sm-3  col-xs-3 col-md-4">
+                        <div class="col-sm col-xs-3 col-md-4">
                             <img src="../assets/img/icons/phone.svg" alt="phone" class="phone">
                         </div>
 
-                        <div class="col-sm-9 d-none d-sm-block col-xs-3 col-md-8">
+                        <div class="col-sm d-none d-sm-block col-xs-3 col-md-8">
                             <p class="download-app pt-5">Download the iGofer app</p>
                             <ul class="app-features">
                                 <li> <span>Book and mange appointments</span> </li>
@@ -320,11 +320,11 @@
             <!-- become an igofer worker -->
             <section>
                 <div class="row">
-                    <div class="d-none d-sm-block d-md-none d-lg-block col-md-12 col-xl-6 col-sm-12">
+                    <div class="d-none d-sm-block d-md-none d-lg-block col-md-12 col-xl-6 col-sm">
                         <img class="become-worker-img" src="/assets/img/homepage/becomeworker.svg"
                             alt="become a worker">
                     </div>
-                    <div class="col-md-12 col-xl-6 col-sm-12">
+                    <div class="col-md-12 col-xl-6 col-sm">
                         <h4 class="text-left become-worker">Join the pool of professional iGofer workers</h4>
                         <p class="text-left">Whatever work you do, we'll find you the jobs your want.</p>
                         <button class="worker-button">Become an iGofer worker</button>
