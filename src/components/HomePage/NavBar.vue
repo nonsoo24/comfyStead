@@ -1,34 +1,43 @@
 <template>
     <div>
         <header class="fixed-top">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                 <a href="javascript:void(0)" class="closebtn">&times;</a>
+            <nav class="navbar navbar-expand-md navbar-light">
+                <!-- <a href="javascript:void(0)" class="closebtn">&times;</a> -->
+
                 <!-- logo -->
                 <router-link to="/">
-                 <img class="logo" src="/assets/img/logo.svg" alt="logo">
-                    </router-link>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    <img class="logo" src="/assets/img/logo.svg" alt="logo">
+                </router-link>
+
+                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button> -->
 
                 <!-- menu -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
-                        <router-link id="sign-in" class="nav-link" to="/services" tag="li" active-class="active" exact>Services</router-link>
+                        <router-link id="sign-in" class="nav-link" to="/services" tag="li" active-class="active" exact>
+                            Services</router-link>
                         <router-link id="sti
                         " class="nav-link" to="/store" tag="li" active-class="active">Store</router-link>
 
                     </ul>
+
                     <ul class="navbar-nav ml-auto pr-5">
-                        <router-link id="join" class="nav-link" to="/join" tag="li" active-class="active">Join as a pro</router-link>
-                        <router-link id="sign-up" class="nav-link" to="/signup" tag="li" active-class="active">Sign up</router-link>
-                        <router-link id="login" class="nav-link" to="/login" tag="li" active-class="active">Log In</router-link>
+                        <router-link id="join" class="nav-link" to="/join" tag="li" active-class="active">Join as a pro
+                        </router-link>
+                        <router-link id="sign-up" class="nav-link" to="/signup" tag="li" active-class="active">Sign up
+                        </router-link>
+                        <router-link id="login" class="nav-link" to="/login" tag="li" active-class="active">Log In
+                        </router-link>
                     </ul>
                 </div>
+
+                 <!-- hamburger icon -->
+                <a href="" class="d-md-none d-lg-none"> <img src="../../assets/img/icons/hamburger-preview.png" alt="hamburger" id="hambuger"></a>
             </nav>
         </header>
-
     </div>
 </template>
 
@@ -39,34 +48,31 @@ export default {
         return {
             isClose: false
         }
-    },
-    methods: {
-        // openNav() {
-        //     let sideNav = document.getElementById("header").style.width = "250px";
-        //     document.getElementById("main").style.marginLeft = "250px";
-        //     sideNav.classList.add("menu");
-        // },
+        },
+        methods: {
+                // toggle(e) {
+                //     var width = screen.width;
+                //     console.log(width)
+                //     if (width <= 767) {
+                //         document.getElementById('hambuger').style.display = 'none';
 
-        closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
+                //     }
+                //     else {
+                //         document.getElementById('hambuger').style.display = 'block';
+                //     }
+                // }
         },
 
-        openNav(x) {
-            if (x.matches) { // If media query matches
-                document.body.style.backgroundColor = "yellow";
-            } else {
-                document.body.style.backgroundColor = "pink";
-        }
-    }
+        // created() {
+        //         window.addEventListener("resize", this.toggle);
+        // },
+        // destroyed() {
+        // window.removeEventListener("resize", this.toggle);
+        // }
     }
 
-        // let x = window.matchMedia("(max-width: 700px)")
-        // myFunction(x) // Call listener function at run time
-        // x.addListener(myFunction) // Attach listener function on state changes
-           // },
 
-}
+
 </script>
 
 <style scoped>
@@ -98,6 +104,12 @@ export default {
         color: #2c3e50;
     }
 
+    #hambuger{
+        width: 40px;
+        height: 40px;
+        /* display: none */
+    }
+
     #nav a.router-link-exact-active {
         color: #42b983;
     }
@@ -108,46 +120,6 @@ export default {
      .navbar-nav {
         background-color: #fff !important;
     }
-
-    .position-right {
-    top: 0;
-    right: 0;
-    height: 100%;
-    overflow-y: auto;
-    width: 16em;
-    -webkit-transform: translateX(16em);
-    transform: translateX(16em);
-
-}
-
-.position-right.is-transition-push {
-    box-shadow: 0 0 1px 2px #E2E2E2;
-}
-.off-canvas.is-open {
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-}
-
-.position-right {
-    background-color: white;
-    padding: 0 1em;
-}
-
-.off-canvas.is-transition-push {
-    z-index: 12;
-}
-
-.off-canvas {
-    position: fixed;
-    z-index: 12;
-    transition: -webkit-transform 0.5s ease;
-    transition: transform 0.5s ease;
-    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    background: #e6e6e6;
-}
-
 
 }
     /* Small devices (portrait tablets and large phones, 600px and up) */

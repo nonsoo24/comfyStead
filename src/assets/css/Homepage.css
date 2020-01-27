@@ -577,6 +577,10 @@ li span {
         font-size: 0.6rem;
     }
 
+    .services-types h5:hover, .services-types p:hover{
+        cursor: pointer;
+    }
+
 
 
 }
@@ -677,6 +681,10 @@ li span {
         background: url('/assets/img/services/cleaning.svg');
         height: 15.625rem;
         border-radius: 3px;
+    }
+
+    .services-types h5:hover, .services-types p:hover{
+        cursor: pointer;
     }
 
 
@@ -814,6 +822,9 @@ li span {
         padding-bottom: 0.3125rem;
         color: #333456;
         padding-left: 6.25rem;
+    }
+    .services-types h5:hover, .services-types p:hover{
+        cursor: pointer;
     }
 
 
@@ -1011,6 +1022,9 @@ li span {
         background: url('/assets/img/services/cleaning.svg');
         height: 15.625rem;
         border-radius: 3px;
+    }
+    .services-types h5:hover, .services-types p:hover{
+        cursor: pointer;
     }
 
 
