@@ -2,6 +2,8 @@
     <div>
         <!-- navbar -->
         <nav-bar />
+
+        <!-- side navbar -->
         <side-navbar />
 
         <main id="main">
@@ -197,9 +199,9 @@
 
                             <div class="row mt-3 services-types">
 
-                                <div v-for="(service, i) in services" :key="i" class="col-md-3 col-3"
+                                <div v-for="(service, i) in services"          :key="i" class="col-md-3 col-sm-6"
                                     @click="TaskDescription">
-                                    <img :src="service.image" :alt="service.alt">
+                                    <img :src="service.image" :alt="service.alt" class="img-responsive">
                                     <h5 class="text-left mb-0 mt-1 font-weight-bolder">{{service.title}}</h5>
                                     <p class="text-left">{{service.total}} professionals</p>
                                 </div>

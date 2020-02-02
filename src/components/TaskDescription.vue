@@ -4,6 +4,9 @@
         <!-- navbar -->
         <nav-bar />
 
+        <!-- side navbar -->
+        <side-navbar />
+
         <section>
             <div class="title m-auto ">
                 <h3 class="text-left pb-3 font-weight-bolder m-auto">What do you need done?</h3>
@@ -26,9 +29,9 @@
 
                 <p class="text-left">
                     If you’re in need of home cleaning, office cleaning, or a maid service,
-                    we’re simply the best, most <br> convenient home cleaning service out there.
-                    We provide you with the cheapest house cleaning <br> available while
-                    still having the confidence that you will receive a cleaner who is thorough <br>
+                    we’re simply the best, most convenient home cleaning service out there.
+                    We provide you with the cheapest house cleaning available while
+                    still having the confidence that you will receive a cleaner who is thorough
                     and professional, with keen attention to detail.
                 </p>
 
@@ -170,6 +173,7 @@
 <script>
 import NavBar from '../components/HomePage/NavBar.vue';
 import TheFooter from '../components/HomePage/TheFooter.vue';
+import SideNavbar from '../components/HomePage/SideNavbar.vue';
 import axios from 'axios'
 //import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
 import {
@@ -243,7 +247,8 @@ export default {
 
     components: {
         'nav-bar': NavBar,
-        'the-footer': TheFooter
+        'the-footer': TheFooter,
+        'side-navbar': SideNavbar
     },
 
     methods: {
@@ -429,5 +434,45 @@ export default {
     line-height: 1;
     color: rgba(0,0,0,.5);
     vertical-align: middle;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .title p, .title h3 {
+    position: relative;
+    left: 1.5rem;
+}
+    .title p {
+        font-size: 0.8rem;
+    }
+    .request-form{
+        width: 100%;
+        margin: -4.9375rem 0rem 0rem 0rem !important;
+
+    }
+    .request-details{
+        width: 100%;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
 }
 </style>

@@ -3,6 +3,9 @@
         <!-- navbar -->
         <nav-bar />
 
+         <!-- side navbar -->
+        <side-navbar />
+
         <!-- login form -->
         <section signup-form>
             <div class="m-auto credential">
@@ -193,6 +196,7 @@
     import GoogleLogin from 'vue-google-login';
     import facebookLogin from 'facebook-login-vuejs';
     import NavBar from '../components/HomePage/NavBar.vue'
+     import SideNavbar from '../components/HomePage/SideNavbar.vue';
     import TheFooter from '../components/HomePage/TheFooter.vue';
     export default {
         data() {
@@ -277,6 +281,7 @@
         components: {
             'nav-bar': NavBar,
             'the-footer': TheFooter,
+            'side-navbar': SideNavbar,
             GoogleLogin,
             facebookLogin
         },

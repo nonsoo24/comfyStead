@@ -3,6 +3,9 @@
         <!-- navbar -->
         <nav-bar />
 
+        <!-- side navbar -->
+        <side-navbar />
+
         <!-- login form -->
         <section login-form>
             <div class="m-auto login-credential">
@@ -74,6 +77,7 @@
 <script>
     import axios from 'axios'
     import NavBar from '../components/HomePage/NavBar.vue'
+    import SideNavbar from '../components/HomePage/SideNavbar.vue';
     import TheFooter from '../components/HomePage/TheFooter.vue';
     import {required, email} from 'vuelidate/lib/validators'
     export default {
@@ -97,6 +101,7 @@
 
         components: {
             'nav-bar': NavBar,
+            'side-navbar': SideNavbar,
             'the-footer': TheFooter
         },
 
@@ -146,7 +151,7 @@
                             //if (details.status = true) {
                                 localStorage.setItem('token', JSON.stringify(details.token))
                            // }
-                           
+
                             //console.log(details)
                             this.userDashboard();
                         })

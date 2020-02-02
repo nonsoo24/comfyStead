@@ -4,6 +4,9 @@
         <!-- navbar -->
         <nav-bar />
 
+         <!-- side navbar -->
+        <side-navbar />
+
         <section>
             <div class="title m-auto ">
                 <h3 class="text-left pb-3 font-weight-bolder m-auto">Browse through the list of recommended workers
@@ -150,6 +153,7 @@
 <script>
 import NavBar from '../components/HomePage/NavBar.vue';
 import TheFooter from '../components/HomePage/TheFooter.vue';
+import SideNavbar from '../components/HomePage/SideNavbar.vue';
 import {testimonials} from '../components/Api/Testimonial.js'
 export default {
     data() {
@@ -159,6 +163,7 @@ export default {
     },
     components: {
         'nav-bar': NavBar,
+        'side-navbar': SideNavbar,
         'the-footer': TheFooter
     },
 
