@@ -51,9 +51,9 @@
                         <p class="option">OR</p>
 
 
-                        <div class="m-auto">
+                        <!-- <div class="m-auto">
                             <button class="facebook" type="submit"><span><img src="/assets/img/facebook.png" alt="facebook" class="mt-0"></span> Log in with facebook</button>
-                        </div>
+                        </div> -->
 
                         <div class="m-auto">
                             <button class="google" type="submit">

@@ -5,26 +5,40 @@
                 <!-- <a href="javascript:void(0)" class="closebtn">&times;</a> -->
 
                 <!-- logo -->
-                <router-link to="/">
-                    <img class="logo" src="/assets/img/logo.svg" alt="logo">
+                <router-link to="/" style="font-weight: 700; color: #000;">
+                    <!-- <img class="logo" src="/assets/img/logo.svg" alt="logo"> -->
+                    ComfyStead
                 </router-link>
 
                 <!-- menu -->
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mr-auto">
-                        <router-link id="sign-in" class="nav-link" to="/services" tag="li" active-class="active" exact>
-                            Services</router-link>
-                        <router-link id="sti
-                        " class="nav-link" to="/store" tag="li" active-class="active">Store</router-link>
+                    <!-- <ul class="navbar-nav mr-auto">
+                        <router-link id="sign-in" class="nav-link ml-2" to="/services" tag="li" active-class="active" exact>
+                            About
+                        </router-link>
+                        <router-link id="sti" class="nav-link" to="/store" tag="li" active-class="active">Blog
+                        </router-link>
 
-                    </ul>
+                         <router-link id="sti" class="nav-link" to="/store" tag="li" active-class="active">Contact
+                        </router-link>
+
+                    </ul> -->
 
                     <ul class="navbar-nav ml-auto pr-5">
-                        <router-link id="join" class="nav-link" to="/join" tag="li" active-class="active">Join as a pro
+                        <!-- <router-link id="join" class="nav-link" to="/join" tag="li" active-class="active">Join as a pro
+                        </router-link> -->
+                        <!-- <router-link id="sign-up" class="nav-link" to="/signup" tag="li" active-class="active">About
                         </router-link>
-                        <router-link id="sign-up" class="nav-link" to="/signup" tag="li" active-class="active">Sign up
+                        <router-link id="sign-up" class="nav-link" to="/signup" tag="li" active-class="active">Blog
+                        </router-link> -->
+
+                        <router-link id="login" class="nav-link" to="/login" tag="li" active-class="active">WorkSpaces
                         </router-link>
-                        <router-link id="login" class="nav-link" to="/login" tag="li" active-class="active">Log In
+
+                          <router-link id="sign-up" class="nav-link" to="/signup" tag="li" active-class="active">Blog
+                        </router-link>
+
+                         <router-link id="sign-up" class="nav-link" to="/signup" tag="li" active-class="active">Contact
                         </router-link>
                     </ul>
                 </div>
@@ -138,20 +152,9 @@ export default {
     .navbar-nav {
         background-color: #fff !important;
     }
-    .menu {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #fff;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-      }
 
-      .menu a {
+
+      /* .menu a {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
         font-size: 25px;
@@ -170,7 +173,7 @@ export default {
         right: 25px;
         font-size: 36px;
         margin-left: 50px;
-      }
+      } */
 
 }
 
@@ -220,6 +223,10 @@ export default {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  
+
+}
+
+.navbar {
+    box-shadow: none !important;
 }
 </style>

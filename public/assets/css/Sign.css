@@ -1,0 +1,181 @@
+@font-face {
+    font-family: "avenir-next-lt-pro-regular";
+    src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("woff"),
+        url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"),
+        url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "avenir-next-lt-pro-italic";
+    src: url("../../assets/fonts/AvenirNextLTPro-It.otf") format("woff"),
+        url("../../assets/fonts/AvenirNextLTPro-It.otf") format("opentype"),
+        url("../../assets/fonts/AvenirNextLTPro-It.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "avenir-next-lt-pro-demi";
+    src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff"),
+        url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"),
+        url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "avenir-next-lt-pro-demi-condensed";
+    src: url("../../assets/fonts/AvenirNextLTPro-DemiCn.otf") format("woff"),
+        url("../../assets/fonts/AvenirNextLTPro-DemiCn.otf") format("opentype"),
+        url("../../assets/fonts/AvenirNextLTPro-DemiCn.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "avenir-next-lt-pro-bold";
+    src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("woff"),
+        url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"),
+        url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Gilroy-Bold ☞';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gilroy-Bold ☞'), url('../../assets/fonts/Gilroy-Bold.woff') format('woff');
+}
+
+html{
+    font-size: 16px;
+    font-family: "avenir-next-lt-pro-regular";
+}
+
+
+[login-form],
+[signup-form] {
+    margin-top: 6.0625rem;
+    margin-bottom: 8.8125rem;
+}
+
+.login-credential {
+    background: #F5F5F7;
+    border: 0.0625rem solid #EAEAEA;
+    border-radius: 0.25rem;
+    width: 25rem;
+    min-height: 21.9375rem;
+}
+
+.credential {
+    background: #F5F5F7;
+    border: 0.0625rem solid #EAEAEA;
+    border-radius: 0.25rem;
+    width: 25rem;
+    min-height: 46.875rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    margin: 2.5rem 0rem 1.1875rem 0rem;
+    font-family: 'Gilroy-Bold ☞';
+}
+
+input {
+    background: #FFFFFF;
+    border: 0.0625rem solid #EAEAEA;
+    border-radius: 0.25rem;
+    width: 21.9375rem !important;
+    margin: auto;
+    /* font-family: "avenir-next-lt-pro-regular"; */
+}
+
+.login-button {
+    cursor: pointer;
+    background: #FF6600 !important;
+    border-radius: 0.25rem;
+    border: 0.0625rem solid #FF6600;
+    width: 21.9375rem;
+    padding: 0.8125rem 0.9375rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.login-button:hover {
+    background: #fff !important;
+    color: #FF6600;
+    border: 0.0625rem solid #FF6600;
+    font-weight: 600;
+    box-shadow: 0 0.75rem 1rem 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.facebook button {
+    cursor: pointer;
+    background-image: #3558D4 !important;
+    border-radius: 0.25rem;
+    border: 0.0625rem solid #3558D4;
+    width: 21.9375rem;
+    padding: 0.8125rem 0.9375rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+
+.google {
+    cursor: pointer;
+    background: #fff !important;
+    border-radius: 0.25rem;
+    /* border: 0.0625rem solid #ffffff; */
+    width: 21.9375rem;
+    padding: 0.8125rem 0.9375rem;
+    color: #333456;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.5625rem 0rem 1.5625rem 0rem !important;
+    border: 0.0625rem solid #C4C4C4 !important;
+}
+
+
+
+.option {
+    margin: 1.5625rem 0rem 1.5625rem 0rem
+}
+
+.text-center {
+    font-size: 0.8125rem;
+    color: #333456;
+}
+
+a {
+    font-size: 0.75rem;
+    color: rgba(51, 52, 86, 0.6);
+    margin: 1rem;
+    text-align: right !important;
+    float: right;
+}
+
+a:hover{
+    text-decoration: none;
+    color: rgba(51, 52, 86, 0.6);
+}
+
+
+.form-group.invalid input {
+    /* background-color: #ffc9aa; */
+    border: 0.0625rem solid #FF6600;
+}
+
+.error {
+    color: #FF6600;;
+}
+
+
+/* button preloader */
+.spinner-border{
+    display: none;
+}
+
+.Disabled{
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
