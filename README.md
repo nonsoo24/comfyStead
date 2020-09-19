@@ -1,8 +1,2 @@
-# iGofer
-
-```
-A market place for local services
-```
-
-
-See [Project](https://cli.vuejs.org/config/).
+# comfyStead
+A market place for workstation items
