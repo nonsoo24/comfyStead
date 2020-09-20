@@ -33,7 +33,7 @@
 
 
             <!-- services -->
-            <section>
+            <!-- <section>
                 <div id="exTab1" class="container">
                     <ul class="nav nav-tabs nav-justified">
                         <li class="nav-item">
@@ -129,7 +129,7 @@
                     </div>
 
                 </div>
-            </section>
+            </section> -->
 
             <!--  ComfyStead Process -->
             <section get-app id="comfystead-process">
