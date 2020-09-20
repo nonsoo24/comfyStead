@@ -7,57 +7,25 @@
 	        <div class="row">
 	            <div class="col-sm-6 col-lg-3 p-b-50">
 	                <h4 class="stext-301 cl0 p-b-30">
-	                    Categories
+	                    Comfy Stead
 	                </h4>
 
 	                <ul>
 	                    <li class="p-b-10">
 	                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-	                            Women
+	                            About
 	                        </a>
 	                    </li>
 
 	                    <li class="p-b-10">
 	                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-	                            Men
+	                            Blog
 	                        </a>
 	                    </li>
 
 	                    <li class="p-b-10">
 	                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-	                            Shoes
-	                        </a>
-	                    </li>
-
-	                    <li class="p-b-10">
-	                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-	                            Watches
-	                        </a>
-	                    </li>
-	                </ul>
-	            </div>
-
-	            <div class="col-sm-6 col-lg-3 p-b-50">
-	                <h4 class="stext-301 cl0 p-b-30">
-	                    Help
-	                </h4>
-
-	                <ul>
-	                    <li class="p-b-10">
-	                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-	                            Track Order
-	                        </a>
-	                    </li>
-
-	                    <li class="p-b-10">
-	                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-	                            Returns
-	                        </a>
-	                    </li>
-
-	                    <li class="p-b-10">
-	                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-	                            Shipping
+	                            Careers
 	                        </a>
 	                    </li>
 
@@ -71,12 +39,44 @@
 
 	            <div class="col-sm-6 col-lg-3 p-b-50">
 	                <h4 class="stext-301 cl0 p-b-30">
+	                    Legal
+	                </h4>
+
+	                <ul>
+	                    <li class="p-b-10">
+	                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+	                            Terms and conditions
+	                        </a>
+	                    </li>
+
+	                    <li class="p-b-10">
+	                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+	                            Privacy Policy
+	                        </a>
+	                    </li>
+
+	                    <!-- <li class="p-b-10">
+	                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+	                            Shipping
+	                        </a>
+	                    </li>
+
+	                    <li class="p-b-10">
+	                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+	                            FAQs
+	                        </a>
+	                    </li> -->
+	                </ul>
+	            </div>
+
+	            <div class="col-sm-6 col-lg-3 p-b-50">
+	                <h4 class="stext-301 cl0 p-b-30">
 	                    GET IN TOUCH
 	                </h4>
 
 	                <p class="stext-107 cl7 size-201">
-	                    Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on
-	                    (+1) 96 716 6879
+	                    Any questions? Let us know in store at 8th floor, 1 Norman Williams Street, Ikoyi Lagos State or call us on
+	                    (+234) 70 38 716 687
 	                </p>
 
 	                <div class="p-t-27">
@@ -89,7 +89,11 @@
 	                    </a>
 
 	                    <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-	                        <i class="fa fa-pinterest-p"></i>
+	                        <i class="fa fa-linkedin"></i>
+	                    </a>
+
+                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+	                        <i class="fa fa-twitter"></i>
 	                    </a>
 	                </div>
 	            </div>
@@ -138,11 +142,8 @@
 	                </a> -->
 	            </div>
 
-	            <p class="stext-107 cl6 txt-center">
-	                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	                Copyright &copy; All rights reserved | This template is made with <i class="fa fa-heart-o"
-	                    aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-	                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	            <p class="stext-107 cl6 text-center">
+	                Copyright &copy; 2020 ComfyStead  | All rights reserved
 
 	            </p>
 	        </div>
@@ -667,6 +668,7 @@ svg:hover {
   font-family: "Poppins-Regular";
   font-size: 13px;
   line-height: 1.923;
+  color: #000;
 }
 
 .stext-108 {
@@ -737,6 +739,7 @@ svg:hover {
   font-size: 15px;
   line-height: 1.6;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 /* [ Hover ] */
@@ -744,7 +747,8 @@ svg:hover {
 .hov-cl0:hover {color: #fff;}
 .hov-bg0:hover {background-color: #fff;}
 .hov-cl1:hover {color: #717fe0;}
-.hov-bg1:hover {background-color: #717fe0;}
+.hov-bg1:hover {background-color: #fff;}
+/* .bg1:hover {background-color: #fff; color: #fff;} */
 
 .cl0 {color: #000;}
 
@@ -977,9 +981,10 @@ svg:hover {
   position: absolute;
   width: 0%;
   height: 2px;
-  background-color: #6774d5;
+  background-color: #000 !important;
   left: 0;
-  bottom: -2px;
+  /* bottom: -2px; */
+  bottom: 12px;
 }
 
 .input1:focus + .focus-input1 {
@@ -994,21 +999,49 @@ svg:hover {
 }
 
 .hov-btn2:hover {
-  border-color: #fff;
-  background-color: #fff;
-  color: #717fe0;
+  border-color: #000;
+  background-color: #000;
+  color: #fff;
 }
 
 .bg-none {background-color: transparent;}
-.bg0 {background-color: #fff;}
-.bg1 {background-color: #717fe0;}
-.bg2 {background-color: #e6e6e6;}
+.bg1 {background-color: #fff; color: #000; border: 1px solid #000}
 .bg3 {background-color: #222;}
-.bg5 {background-color: rgba(0,0,0,0.5);}
-.bg6 {background-color: #f2f2f2;}
-.bg7 {background-color: #333;}
-.bg8 {background-color: #f3f3f3;}
-.bg9 {background-color: rgba(255,255,255,0.9);}
+
+.p-t-75, .p-tb-75, .p-all-75 {padding-top: 75px;}
+.p-b-50 {padding-top: 50px;}
+.p-b-10, .p-tb-10, .p-all-10 {padding-bottom: 10px;}
+.fs-18 {font-size: 18px;}
+
+
+
+.m-r-16, .m-lr-16, .m-all-16 {
+    margin-right: 16px;
+}
+
+ul li {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+.wrap-input1 {
+  position: relative;
+  /* border-bottom: 2px solid rgba(10, 3, 3, 0.1); */
+}
+
+  .w-full-xl {width: 100%;}
+  .p-b-4, .p-tb-4, .p-all-4 {padding-bottom: 4px;}
+
+.plh1::-webkit-input-placeholder { color: #b2b2b2;}
+.plh1:-moz-placeholder { color: #b2b2b2;}
+.plh1::-moz-placeholder { color: #b2b2b2;}
+.plh1:-ms-input-placeholder { color: #b2b2b2;}
+
+.fa {
+    color: #000 !important;
+}
+
 /* .ti-angle-down.active {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);

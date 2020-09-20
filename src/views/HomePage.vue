@@ -177,7 +177,7 @@
                     <div class="container">
                         <div class="row c-margin-t-10 c-margin-b-10">
                             <div class="col-md-12">
-                                <div class="c-content-title-1 c-title-pricing-1">
+                                <div class="c-content-title-1 c-title-pricing-1 text-center">
                                     <h3 class="c-font-uppercase c-font-bold">Packages</h3>
                                 </div>
                             </div>
@@ -291,16 +291,16 @@
 
             <!-- ======= Subscribe Section ======= -->
             <section>
-                <div class="subscribe">
+                <div class="subscribe text-center">
                     <h4>Frequently Asked Questions</h4>
-                    <p>Subscribe to our newsletter to be the first to get news on our products</p>
+                    <!-- <p>Subscribe to our newsletter to be the first to get news on our products</p> -->
                 </div>
 
                 <div class="fd-flex col-md-6 mb-5">
-                    <!-- <div class="form-group"> -->
+                    <!-- <div class="form-group">
                         <input type="text" class="form-control" aria-describedby="emailAddress" placeholder="Enter email address">
-                    <!-- </div> -->
-                            <button class="btn btn-primary ml-3 mt-1">Subscribe</button>
+                    </div>
+                            <button class="btn btn-primary ml-3 mt-1">Subscribe</button> -->
                 </div>
 
             </section>

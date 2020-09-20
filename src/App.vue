@@ -26,10 +26,10 @@ export default {
 
 
 #app {
-  font-family: 'avenir-next-lt-pro-regular', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat-Bold', 'avenir-next-lt-pro-regular', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 
