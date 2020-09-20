@@ -1082,14 +1082,14 @@ li span {
 .testimonials .testimonial-item h3 {
     font-size: 18px;
     font-weight: bold;
-    /* margin: 10px 0 5px 45px; */
+    margin: 10px 0 5px 45px;
     color: #111;
 }
 
 .testimonials .testimonial-item h4 {
     font-size: 14px !important;
     color: #999;
-    margin: 0 0 0 1px;
+    margin: 0 0 0 45px;
     padding: 0px !important;
 }
 

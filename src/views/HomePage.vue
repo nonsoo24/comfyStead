@@ -355,10 +355,10 @@
 
                     customerFeedbacks: [{
                             id: '1',
-                            src: require('../assets/img/testimonials/Testimonial11.webp'),
+                            src: require('../assets/img/testimonials/Testimonial2.jpg'),
                             alt: 'customer-image',
-                            name: 'Daniel Chukwurah',
-                            position: 'Software Developer',
+                            name: 'Folajimi Aroloye',
+                            position: 'Business Data Analyst',
                             comments: 'One of my biggest challenge is sourcing for quality workspace items. ComfyStead came to the rescue when I needed them most '
                         },
 
@@ -385,7 +385,7 @@
                             alt: 'customer-image',
                             name: 'Godwin Abidoye',
                             position: 'Graphics Designer',
-                            comments: 'The screen on my phone went completely blank. ComfyStead replaced my phone at no cost due to the phone still being under warranty.'
+                            comments: 'ComfyStead is my number one plug when it comes to setting up my work station, I recommend them anyday anytime'
                         },
                         {
                             id: '5',
@@ -393,7 +393,7 @@
                             alt: 'customer-image',
                             name: 'Ifeanyi Nnamdi',
                             position: 'Entrepreneur',
-                            comments: 'ComfyStead is the best, anytime I lose or break any of my phones they replace them overnight hassle free. My wife and I feel very secure with this platform.'
+                            comments: 'ComfyStead is my number one plug when it comes to setting up my work station, I recommend them anyday anytime'
                         }
                     ],
 
