@@ -685,7 +685,7 @@ svg:hover {
   font-family: "Poppins-Regular";
   font-size: 13px;
   line-height: 1.923;
-  color: #000;
+  color: #333456;
 }
 
 .stext-108 {
@@ -757,6 +757,7 @@ svg:hover {
   line-height: 1.6;
   text-transform: uppercase;
   font-weight: 700;
+  color: #333456 !important;
 }
 
 /* [ Hover ] */
@@ -998,7 +999,7 @@ svg:hover {
   position: absolute;
   width: 0%;
   height: 2px;
-  background-color: #000 !important;
+  background-color: #333456 !important;
   left: 0;
   /* bottom: -2px; */
   bottom: 12px;
@@ -1016,13 +1017,13 @@ svg:hover {
 }
 
 .hov-btn2:hover {
-  border-color: #000;
-  background-color: #000;
+  border-color: #333456;;
+  background-color: #333456;;
   color: #fff;
 }
 
 .bg-none {background-color: transparent;}
-.bg1 {background-color: #fff; color: #000; border: 1px solid #000}
+.bg1 {background-color: #fff; color: #333456; border: 1px solid#333456;}
 .bg3 {background-color: #222;}
 
 .p-t-75, .p-tb-75, .p-all-75 {padding-top: 75px;}
@@ -1056,7 +1057,7 @@ ul li {
 .plh1:-ms-input-placeholder { color: #b2b2b2;}
 
 .fa {
-    color: #000 !important;
+    color: #333456 !important;
 }
 
 /* .ti-angle-down.active {
