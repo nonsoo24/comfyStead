@@ -77,6 +77,15 @@ const routes = [
     component: VerifyEmail
   },
 
+  {
+    path: "/SelectedPlan/:id",
+    name: 'SelectedPlan',
+    // route level code-splitting
+    // this generates a separate chunk (selectedPlan.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import('../views/SelectedPlan.vue'),
+  },
+
 ]
 
 

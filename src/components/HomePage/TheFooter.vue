@@ -287,7 +287,28 @@ let copyright = new Date().getFullYear();
 export default {
   data() {
     return {
-      date: copyright
+      date: copyright,
+      footer: [{
+                        id: '1',
+                        title: 'Comfy Stead',
+                        text: ['About', 'Blog', 'Career', 'FAQs']
+                    },
+                    {
+                        id: '2',
+                        title: 'Legal',
+                        text: ['Terms and conditions', 'Privacy policy']
+                    },
+                    {
+                        id: '3',
+                        title: 'Get in Touch',
+                        text: 'Any questions? Let us know in store at 8th floor, 1 Norman Williams Street, Ikoyi Lagos State or call us on',
+                        phoneNumber: '(+234) 70 38 716 687)'
+                    },
+                    {
+                        id: '4',
+                        title: 'Newsletter'
+                    }
+                ]
     }
   },
 

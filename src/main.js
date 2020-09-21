@@ -21,6 +21,7 @@ Vue.use(GoogleLogin)
 Vue.use(facebookLogin)
 //Vue.use(VueCtkDateTimePicker);
 Vue.config.productionTip = false
+// Vue.config.devtools = true
 window.onerror = function(message, source, line, column, error) {
   console.log('ONE ERROR HANDLER TO RULE THEM ALL:', message);
 }

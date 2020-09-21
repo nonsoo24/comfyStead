@@ -74,7 +74,7 @@ h4 {
     font-family: 'Gilroy-Bold ☞';
 }
 
-input {
+input, textarea {
     background: #FFFFFF;
     border: 0.0625rem solid #EAEAEA;
     border-radius: 0.25rem;
@@ -85,9 +85,9 @@ input {
 
 .login-button {
     cursor: pointer;
-    background: #FF6600 !important;
+    background: #333456 !important;
     border-radius: 0.25rem;
-    border: 0.0625rem solid #FF6600;
+    border: 0.0625rem solid #333456;
     width: 21.9375rem;
     padding: 0.8125rem 0.9375rem;
     color: #fff;
@@ -97,8 +97,8 @@ input {
 
 .login-button:hover {
     background: #fff !important;
-    color: #FF6600;
-    border: 0.0625rem solid #FF6600;
+    color: #333456;
+    border: 0.0625rem solid #333456;
     font-weight: 600;
     box-shadow: 0 0.75rem 1rem 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 
@@ -178,4 +178,9 @@ a:hover{
     filter: alpha(opacity=65);
     -webkit-box-shadow: none;
     box-shadow: none;
+  }
+
+  .card-header {
+      background-color: #333456;
+      color: #fff;
   }

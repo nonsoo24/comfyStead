@@ -215,7 +215,7 @@
                                                 class="c-font-30 c-font-bold">{{item.price}}</span>
                                         </div>
                                         <div class="c-row c-purchase">
-                                            <button class="btn btn-md btn-primary">Select
+                                            <button class="btn btn-md btn-primary"  @click="planLink(item.id)">Select
                                                 Plan</button>
                                         </div>
                                     </div>
@@ -327,27 +327,32 @@
                 subService: [],
                 accessories: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames", "Laptop Stand", "Reading Lamp", "Headset/Speaker", "Microphone"],
                 subscriptionPackage: [{
+                        id: '1',
                         planName: 'Basic',
                         price: '29,999',
                         accessoryItems: ["Table", "Chair"]
                     },
                     {
+                        id: '2',
                         planName: 'Classic',
                         price: '99,999',
                         accessoryItems: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames"]
                     },
 
                     {
+                        id: '3',
                         planName: 'Classic Plus',
                         price: '129,999',
                         accessoryItems: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames", "Laptop Stand", "Reading Lamp", "Headset/Speaker", "Microphone"]
                     },
                     {
+                        id: '4',
                         planName: 'Stylish',
                         price: '119,999',
                         accessoryItems: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames", "Laptop Stand", "Reading Lamp", "Headset/Speaker", "Microphone"]
                     },
                     {
+                        id: '5',
                         planName: 'Vibe',
                         price: '149,999',
                         accessoryItems: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames", "Laptop Stand", "Reading Lamp", "Headset/Speaker", "Microphone"]
@@ -551,6 +556,18 @@
                 // When the user clicks on the button, scroll to the top of the document
                 document.body.scrollTop = 0;
                 document.documentElement.scrollTop = 0;
+            },
+
+            //route to hymn page by hymn ID
+            planLink(id) {
+                this.$router.push({
+                    name: 'SelectedPlan',
+                    params: {
+                        id
+                    }
+                }).catch((err) => {
+                    throw new Error(`error: ${err}.`);
+                });
             },
 
             addMultiSlider() {
