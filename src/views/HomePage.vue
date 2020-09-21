@@ -306,7 +306,8 @@
             </section>
             <!-- footer -->
             <the-footer />
-<a class="back-to-top" href="#"><span class="ti-angle-up"></span></a>
+<!-- <a id="back-top" class="back-to-top" href="#"><span class="ti-angle-up"></span></a> -->
+<button id="back-top" class="back-to-top" @click="topFunction()" ><span class="ti-angle-up"></span></button>
         </main>
     </div>
 </template>
@@ -316,274 +317,289 @@
     import TheFooter from '../components/HomePage/TheFooter.vue';
     import SideNavbar from '../components/HomePage/SideNavbar.vue';
     import {cleaningSubServices} from '../components/Api/Service.js'
-   // import { VueFlux, FluxCaption, FluxControls, FluxIndex, FluxPagination, FluxPreloader,} from 'vue-flux';
+    // import { VueFlux, FluxCaption, FluxControls, FluxIndex, FluxPagination, FluxPreloader,} from 'vue-flux';
     //import VueCarousel from '@chenfengyuan/vue-carousel';
     export default {
         data() {
-                return {
-                    activeItem: 'cleaning',
-                    services: [],
-                    subService: [],
-                    accessories: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames", "Laptop Stand", "Reading Lamp", "Headset/Speaker", "Microphone"],
-                    subscriptionPackage: [{
-                            planName: 'Basic',
-                            price: '29,999',
-                            accessoryItems: ["Table", "Chair"]
-                        },
-                        {
-                            planName: 'Classic',
-                            price: '99,999',
-                            accessoryItems: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames"]
-                        },
+            return {
+                activeItem: 'cleaning',
+                services: [],
+                subService: [],
+                accessories: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames", "Laptop Stand", "Reading Lamp", "Headset/Speaker", "Microphone"],
+                subscriptionPackage: [{
+                        planName: 'Basic',
+                        price: '29,999',
+                        accessoryItems: ["Table", "Chair"]
+                    },
+                    {
+                        planName: 'Classic',
+                        price: '99,999',
+                        accessoryItems: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames"]
+                    },
 
-                        {
-                            planName: 'Classic Plus',
-                            price: '129,999',
-                            accessoryItems: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames", "Laptop Stand", "Reading Lamp", "Headset/Speaker", "Microphone"]
-                        },
-                        {
-                            planName: 'Stylish',
-                            price: '119,999',
-                            accessoryItems: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames", "Laptop Stand", "Reading Lamp", "Headset/Speaker", "Microphone"]
-                        },
-                        {
-                            planName: 'Vibe',
-                            price: '149,999',
-                            accessoryItems: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames", "Laptop Stand", "Reading Lamp", "Headset/Speaker", "Microphone"]
-                        }
-                    ],
+                    {
+                        planName: 'Classic Plus',
+                        price: '129,999',
+                        accessoryItems: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames", "Laptop Stand", "Reading Lamp", "Headset/Speaker", "Microphone"]
+                    },
+                    {
+                        planName: 'Stylish',
+                        price: '119,999',
+                        accessoryItems: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames", "Laptop Stand", "Reading Lamp", "Headset/Speaker", "Microphone"]
+                    },
+                    {
+                        planName: 'Vibe',
+                        price: '149,999',
+                        accessoryItems: ["Table", "Chair", "Monitor", "Keyboard", "Mouse", "HDMI", "Cable", "Wall Frames", "Laptop Stand", "Reading Lamp", "Headset/Speaker", "Microphone"]
+                    }
+                ],
 
-                    customerFeedbacks: [{
-                            id: '1',
-                            src: require('../assets/img/testimonials/Testimonial2.jpg'),
-                            alt: 'customer-image',
-                            name: 'Folajimi Aroloye',
-                            position: 'Business Data Analyst',
-                            comments: 'One of my biggest challenge is sourcing for quality workspace items. ComfyStead came to the rescue when I needed them most '
-                        },
+                customerFeedbacks: [{
+                        id: '1',
+                        src: require('../assets/img/testimonials/Testimonial2.jpg'),
+                        alt: 'customer-image',
+                        name: 'Folajimi Aroloye',
+                        position: 'Business Data Analyst',
+                        comments: 'One of my biggest challenge is sourcing for quality workspace items. ComfyStead came to the rescue when I needed them most '
+                    },
 
 
-                        {
-                            id: '2',
-                            src: require('../assets/img/testimonials/Testimonial1.jpg'),
-                            alt: 'customer-image',
-                            name: 'Laruba Adama',
-                            position: 'UI/UX Designer',
-                            comments: 'ComfyStead is my number one plug when it comes to setting up my work station, I recommend them anyday anytime'
-                        },
-                        {
-                            id: '3',
-                            src: require('../assets/img/testimonials/Testimonial2.jpg'),
-                            alt: 'customer-image',
-                            name: 'Ngozi Kalu',
-                            position: 'Product Owner',
-                            comments: 'It was my first time using ComfyStead, their services was awesome. I recommend them'
-                        },
-                        {
-                            id: '4',
-                            src: require('../assets/img/testimonials/Testiomial9.webp'),
-                            alt: 'customer-image',
-                            name: 'Godwin Abidoye',
-                            position: 'Graphics Designer',
-                            comments: 'ComfyStead is my number one plug when it comes to setting up my work station, I recommend them anyday anytime'
-                        },
-                        {
-                            id: '5',
-                            src: require('../assets/img/testimonials/Testiomonial7.webp'),
-                            alt: 'customer-image',
-                            name: 'Ifeanyi Nnamdi',
-                            position: 'Entrepreneur',
-                            comments: 'ComfyStead is my number one plug when it comes to setting up my work station, I recommend them anyday anytime'
-                        }
-                    ],
+                    {
+                        id: '2',
+                        src: require('../assets/img/testimonials/Testimonial1.jpg'),
+                        alt: 'customer-image',
+                        name: 'Laruba Adama',
+                        position: 'UI/UX Designer',
+                        comments: 'ComfyStead is my number one plug when it comes to setting up my work station, I recommend them anyday anytime'
+                    },
+                    {
+                        id: '3',
+                        src: require('../assets/img/testimonials/Testimonial2.jpg'),
+                        alt: 'customer-image',
+                        name: 'Ngozi Kalu',
+                        position: 'Product Owner',
+                        comments: 'It was my first time using ComfyStead, their services was awesome. I recommend them'
+                    },
+                    {
+                        id: '4',
+                        src: require('../assets/img/testimonials/Testiomial9.webp'),
+                        alt: 'customer-image',
+                        name: 'Godwin Abidoye',
+                        position: 'Graphics Designer',
+                        comments: 'ComfyStead is my number one plug when it comes to setting up my work station, I recommend them anyday anytime'
+                    },
+                    {
+                        id: '5',
+                        src: require('../assets/img/testimonials/Testiomonial7.webp'),
+                        alt: 'customer-image',
+                        name: 'Ifeanyi Nnamdi',
+                        position: 'Entrepreneur',
+                        comments: 'ComfyStead is my number one plug when it comes to setting up my work station, I recommend them anyday anytime'
+                    }
+                ],
 
-                    partners: [{
-                            id: '1',
-                            src: require('../assets/img/partner-logo/aiico.webp'),
-                            alt: 'customer-image',
-                            height: '80',
-                            width: '150'
-                        },
-                        {
-                            id: '2',
-                            src: require('../assets/img/partner-logo/leadway.webp'),
-                            alt: 'customer-image',
-                            height: '80',
-                            width: '82'
-                        },
-                        {
-                            id: '3',
-                            src: require('../assets/img/partner-logo/slot.webp'),
-                            alt: 'customer-image',
-                            height: '50',
-                            width: '150'
-                        },
-                        {
-                            id: '4',
-                            src: require('../assets/img/partner-logo/aiico.webp'),
-                            alt: 'customer-image',
-                            height: '80',
-                            width: '150'
-                        },
-                        {
-                            id: '5',
-                            src: require('../assets/img/partner-logo/leadway.webp'),
-                            alt: 'customer-image',
-                            height: '80',
-                            width: '82'
-                        }
-                    ],
-                    carouselSlider: [
-                        {
-                            id: '1',
-                            src: require('../assets/img/illustrations/programmer.svg'),
-                            alt: 'slider-image',
-                            height: '500',
-                            width: '500',
-                            sliderTitle: 'Stay Productive Working From Home',
-                            sliderBody: ' Replacements, repairs and answers delivered right to you.',
-                            href: '#one!'
-                        },
-                        {
-                            id: '2',
-                            src: require('../assets/img/illustrations/podcast.svg'),
-                            alt: 'slider-image',
-                            height: '500',
-                            width: '500',
-                            sliderTitle: 'Stay Productive Working From Home',
-                            sliderBody: ' Replacements, repairs and answers delivered right to you.',
-                            href: '#two!'
+                partners: [{
+                        id: '1',
+                        src: require('../assets/img/partner-logo/aiico.webp'),
+                        alt: 'customer-image',
+                        height: '80',
+                        width: '150'
+                    },
+                    {
+                        id: '2',
+                        src: require('../assets/img/partner-logo/leadway.webp'),
+                        alt: 'customer-image',
+                        height: '80',
+                        width: '82'
+                    },
+                    {
+                        id: '3',
+                        src: require('../assets/img/partner-logo/slot.webp'),
+                        alt: 'customer-image',
+                        height: '50',
+                        width: '150'
+                    },
+                    {
+                        id: '4',
+                        src: require('../assets/img/partner-logo/aiico.webp'),
+                        alt: 'customer-image',
+                        height: '80',
+                        width: '150'
+                    },
+                    {
+                        id: '5',
+                        src: require('../assets/img/partner-logo/leadway.webp'),
+                        alt: 'customer-image',
+                        height: '80',
+                        width: '82'
+                    }
+                ],
+                carouselSlider: [{
+                        id: '1',
+                        src: require('../assets/img/illustrations/programmer.svg'),
+                        alt: 'slider-image',
+                        height: '500',
+                        width: '500',
+                        sliderTitle: 'Stay Productive Working From Home',
+                        sliderBody: ' Replacements, repairs and answers delivered right to you.',
+                        href: '#one!'
+                    },
+                    {
+                        id: '2',
+                        src: require('../assets/img/illustrations/podcast.svg'),
+                        alt: 'slider-image',
+                        height: '500',
+                        width: '500',
+                        sliderTitle: 'Stay Productive Working From Home',
+                        sliderBody: ' Replacements, repairs and answers delivered right to you.',
+                        href: '#two!'
 
-                        },
-                        {
-                            id: '3',
-                            src: require('../assets/img/illustrations/feeling_proud.svg'),
-                            alt: 'slider-image',
-                            height: '500',
-                            width: '500',
-                            sliderTitle: 'Stay Productive Working From Home',
-                            sliderBody: ' Replacements, repairs and answers delivered right to you.',
-                            href: '#three!'
+                    },
+                    {
+                        id: '3',
+                        src: require('../assets/img/illustrations/feeling_proud.svg'),
+                        alt: 'slider-image',
+                        height: '500',
+                        width: '500',
+                        sliderTitle: 'Stay Productive Working From Home',
+                        sliderBody: ' Replacements, repairs and answers delivered right to you.',
+                        href: '#three!'
 
-                        },
-                        {
-                            id: '4',
-                            src: require('../assets/img/illustrations/programmerr.svg'),
-                            alt: 'slider-image',
-                            height: '400',
-                            width: '400',
-                            sliderTitle: 'Stay Productive Working From Home',
-                            sliderBody: ' Replacements, repairs and answers delivered right to you.',
-                            href: '#four!'
+                    },
+                    {
+                        id: '4',
+                        src: require('../assets/img/illustrations/programmerr.svg'),
+                        alt: 'slider-image',
+                        height: '400',
+                        width: '400',
+                        sliderTitle: 'Stay Productive Working From Home',
+                        sliderBody: ' Replacements, repairs and answers delivered right to you.',
+                        href: '#four!'
 
-                        }
-                    ]
-                }
+                    }
+                ]
+            }
+        },
+        components: {
+            'nav-bar': NavBar,
+            'the-footer': TheFooter,
+            'side-navbar': SideNavbar
+        },
+
+
+        methods: {
+            isActive(menuItem) {
+                return this.activeItem === menuItem
             },
-            components: {
-                'nav-bar': NavBar,
-                'the-footer': TheFooter,
-                'side-navbar': SideNavbar
+            setActive(menuItem) {
+                this.activeItem = menuItem
             },
-
-
-            methods: {
-                isActive(menuItem) {
-                    return this.activeItem === menuItem
-                },
-                setActive(menuItem) {
-                    this.activeItem = menuItem
-                },
-                TaskDescription() {
-                    this.$router.push({
-                        path: 'task-description'
-                    })
-                },
-
-                installOwlCarousel() {
-                    $(".owl-carousel").owlCarousel({
-                        items: 3,
-                        loop: true,
-                        mouseDrag: false,
-                        touchDrag: false,
-                        pullDrag: false,
-                        rewind: true,
-                        autoplay: true,
-                        margin: 0,
-                        nav: false,
-                        // itemsDesktop : [1199,10],
-                        // itemsDesktopSmall : [980,9],
-                        // itemsTablet: [768,5],
-                        // itemsTabletSmal l: false,
-                        // itemsMobile : [479,4]
-                    });
-                },
-                installMaterialCarousel() {
-                    $('.carousel').carousel({
-                        fullWidth: true,
-                        indicators: true,
-                        //duration: 2000
-                    });
-                    //$('.carousel.carousel-slider').carousel();
-
-                    // $('.carousel').slider({full_width: true});//slider init
-
-                },
-
-                setTimer() {
-                     setInterval(function(){
-                        $('.carousel').carousel('next');
-                    }, 7000);
-                },
-
-                backToTop() {
-                    // Back to top button
-
-                },
-
-                addMultiSlider() {
-                    // $('#basicSlider').multislider({
-                    //     continuous: true,
-                    //     duration: 2000
-                    // });
-                    $('.item').owlCarousel({
-                        items: 4,
-                        loop: true,
-                        margin: 0,
-                        nav: true,
-                        responsive: {
-                            0: {
-                                items: 1
-                            },
-                            600: {
-                                items: 3
-                            },
-                            1000: {
-                                items: 5
-                            }
-                        }
-                    })
-
-                }
-
-            },
-
-            created() {
-                cleaningSubServices.forEach(service => {
-                    this.services.push(service);
+            TaskDescription() {
+                this.$router.push({
+                    path: 'task-description'
                 })
             },
 
-            mounted() {
+            installOwlCarousel() {
+                $(".owl-carousel").owlCarousel({
+                    items: 3,
+                    loop: true,
+                    mouseDrag: false,
+                    touchDrag: false,
+                    pullDrag: false,
+                    rewind: true,
+                    autoplay: true,
+                    margin: 0,
+                    nav: false,
+                    // itemsDesktop : [1199,10],
+                    // itemsDesktopSmall : [980,9],
+                    // itemsTablet: [768,5],
+                    // itemsTabletSmal l: false,
+                    // itemsMobile : [479,4]
+                });
+            },
+            installMaterialCarousel() {
+                $('.carousel').carousel({
+                    fullWidth: true,
+                    indicators: true,
+                    //duration: 2000
+                });
+                //$('.carousel.carousel-slider').carousel();
 
-                this.installOwlCarousel()
-                this.installMaterialCarousel()
-                this.setTimer()
-                //this.backToTop()
+                // $('.carousel').slider({full_width: true});//slider init
+
+            },
+
+            setTimer() {
+                setInterval(function () {
+                    $('.carousel').carousel('next');
+                }, 7000);
+            },
+
+            scrollFunction() {
+                debugger
+                //Get the button
+                let mybutton = document.getElementById("back-top");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            },
+
+            topFunction() {
+                // When the user clicks on the button, scroll to the top of the document
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            },
+
+            addMultiSlider() {
+                // $('#basicSlider').multislider({
+                //     continuous: true,
+                //     duration: 2000
+                // });
+                $('.item').owlCarousel({
+                    items: 4,
+                    loop: true,
+                    margin: 0,
+                    nav: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 3
+                        },
+                        1000: {
+                            items: 5
+                        }
+                    }
+                })
 
             }
 
+        },
+
+        created() {
+            cleaningSubServices.forEach(service => {
+                    this.services.push(service);
+                }),
+                window.addEventListener('scroll', this.scrollFunction);
+        },
+
+        mounted() {
+
+            this.installOwlCarousel()
+            this.installMaterialCarousel()
+            this.setTimer()
+            //this.backToTop()
+
+        },
+
+        destroyed() {
+            window.removeEventListener('scroll', this.scrollFunction);
         }
+    }
 </script>
 
 <style scoped src="../assets/css/Homepage.css"></style>

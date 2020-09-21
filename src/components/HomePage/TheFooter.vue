@@ -143,7 +143,7 @@
 	            </div>
 
 	            <p class="stext-107 cl6 text-center">
-	                Copyright &copy; 2020 ComfyStead  | All rights reserved
+	                Copyright &copy; {{ date }} ComfyStead  | All rights reserved
 
 	            </p>
 	        </div>
@@ -281,41 +281,52 @@
     </div>
 </template>
 
+<script>
+let copyright = new Date().getFullYear();
 
+export default {
+  data() {
+    return {
+      date: copyright
+    }
+  },
+
+}
+</script>
 <style scoped>
 @font-face {
     font-family: "avenir-next-lt-pro-regular";
-    src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("woff"),
-        url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"),
-        url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("truetype");
+    src: url("../../assets/fonts/Avenir/AvenirNextLTPro-Regular.otf") format("woff"),
+        url("../../assets/fonts/Avenir/AvenirNextLTPro-Regular.otf") format("opentype"),
+        url("../../assets/fonts/Avenir/AvenirNextLTPro-Regular.otf") format("truetype");
 }
 
 @font-face {
     font-family: "avenir-next-lt-pro-italic";
-    src: url("../../assets/fonts/AvenirNextLTPro-It.otf") format("woff"),
-        url("../../assets/fonts/AvenirNextLTPro-It.otf") format("opentype"),
-        url("../../assets/fonts/AvenirNextLTPro-It.otf") format("truetype");
+    src: url("../../assets/fonts/Avenir/AvenirNextLTPro-It.otf") format("woff"),
+        url("../../assets/fonts/Avenir/AvenirNextLTPro-It.otf") format("opentype"),
+        url("../../assets/fonts/Avenir/AvenirNextLTPro-It.otf") format("truetype");
 }
 
 @font-face {
     font-family: "avenir-next-lt-pro-demi";
-    src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff"),
-        url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"),
-        url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("truetype");
+    src: url("../../assets/fonts/Avenir/AvenirNextLTPro-Demi.otf") format("woff"),
+        url("../../assets/fonts/Avenir/AvenirNextLTPro-Demi.otf") format("opentype"),
+        url("../../assets/fonts/Avenir/AvenirNextLTPro-Demi.otf") format("truetype");
 }
 
 @font-face {
     font-family: "avenir-next-lt-pro-demi-condensed";
-    src: url("../../assets/fonts/AvenirNextLTPro-DemiCn.otf") format("woff"),
-        url("../../assets/fonts/AvenirNextLTPro-DemiCn.otf") format("opentype"),
-        url("../../assets/fonts/AvenirNextLTPro-DemiCn.otf") format("truetype");
+    src: url("../../assets/fonts/Avenir/AvenirNextLTPro-DemiCn.otf") format("woff"),
+        url("../../assets/fonts/Avenir/AvenirNextLTPro-DemiCn.otf") format("opentype"),
+        url("../../assets/fonts/Avenir/AvenirNextLTPro-DemiCn.otf") format("truetype");
 }
 
 @font-face {
     font-family: "avenir-next-lt-pro-bold";
-    src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("woff"),
-        url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"),
-        url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("truetype");
+    src: url("../../assets/fonts/Avenir/AvenirNextLTPro-Bold.otf") format("woff"),
+        url("../../assets/fonts/Avenir/AvenirNextLTPro-Bold.otf") format("opentype"),
+        url("../../assets/fonts/Avenir/AvenirNextLTPro-Bold.otf") format("truetype");
 }
 
 @font-face {
@@ -323,6 +334,12 @@
     font-style: normal;
     font-weight: normal;
     src: local('Gilroy-Bold ☞'), url('../../assets/fonts/Gilroy-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("../../assets/fonts/Montserrat/Montserrat-Bold.ttf"),
+        url("../../assets/fonts/Montserrat/Montserrat-BoldItalic.ttf")
 }
 
 footer {
@@ -735,7 +752,7 @@ svg:hover {
 
 /*---------------------------------------------*/
 .stext-301 {
-  font-family: "Montserrat-Bold";
+  font-family: 'Gilroy-Bold ☞';
   font-size: 15px;
   line-height: 1.6;
   text-transform: uppercase;

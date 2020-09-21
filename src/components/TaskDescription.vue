@@ -284,9 +284,9 @@ export default {
 
 @font-face {
     font-family: "avenir-next-lt-pro-regular";
-    src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("woff"),
-        url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"),
-        url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("truetype");
+    src: url("../assets/fonts/Avenir/AvenirNextLTPro-Regular.otf") format("woff"),
+        url("../assets/fonts/Avenir/AvenirNextLTPro-Regular.otf") format("opentype"),
+        url("../assets/fonts/Avenir/AvenirNextLTPro-Regular.otf") format("truetype");
 }
 
 @font-face {

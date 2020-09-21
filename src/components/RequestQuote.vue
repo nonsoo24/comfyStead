@@ -189,9 +189,7 @@ export default {
                 //                 console.log(error.response)
                 //                 this.msg = error.response.data.msg
                 //                 console.log(error.response.data.errors || error.response.data.msg);
-                //             })
-
-                let customerRequest = localStorage.getItem('TaskDetails')
+                //             })Avenir/tem('TaskDetails')
                 if(customerRequest){
                     let requestButton = document.getElementById('request-button');
                     let quoteButton = document.getElementById('quote-button')
@@ -223,9 +221,9 @@ export default {
 
 @font-face {
     font-family: "avenir-next-lt-pro-regular";
-    src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("woff"),
-        url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"),
-        url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("truetype");
+    src: url("../assets/fonts/Avenir/AvenirNextLTPro-Regular.otf") format("woff"),
+        url("../assets/fonts/Avenir/AvenirNextLTPro-Regular.otf") format("opentype"),
+        url("../assets/fonts/Avenir/AvenirNextLTPro-Regular.otf") format("truetype");
 }
 
 @font-face {

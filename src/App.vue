@@ -25,13 +25,13 @@ export default {
 
 
 
-#app {
+/* #app {
   font-family: 'Montserrat-Bold', 'avenir-next-lt-pro-regular', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
+  text-align: center;
   color: #2c3e50;
-}
+} */
 
 .is-open {
   width: 200px !important;
